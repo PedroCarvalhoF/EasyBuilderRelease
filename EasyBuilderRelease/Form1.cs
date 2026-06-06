@@ -7,7 +7,9 @@ namespace EasyBuilderRelease
     {
         private readonly ReleaseRunner _releaseRunner = new();
         private readonly List<ReleaseItem> _releaseItems = [];
+        private readonly LastReleaseStore _lastReleaseStore = new(GetLocalDataDirectory());
         private bool _isRunning;
+        private string? _lastReleaseRoot;
 
         public Form1()
         {
@@ -17,8 +19,9 @@ namespace EasyBuilderRelease
         private void Form1_Load(object sender, EventArgs e)
         {
             ConfigureLogTextBoxes();
+            LoadLastReleaseItems();
             RefreshReleaseList();
-            AppendSummary("Selecione os projetos .csproj e clique em Builder Release.");
+            AppendSummary("Selecione os projetos .csproj e clique em Release em fila ou Release paralelo.");
         }
 
         private void ConfigureLogTextBoxes()
@@ -124,6 +127,7 @@ namespace EasyBuilderRelease
             }
 
             WriteManifest(releaseRoot, results);
+            SaveLastReleaseItems(releaseRoot);
             AppendSummary($"Manifesto: {Path.Combine(releaseRoot, "manifesto-release.txt")}");
             if (results.All(result => result.Succeeded))
             {
@@ -214,6 +218,7 @@ namespace EasyBuilderRelease
 
             targetTextBox.Text = dialog.FileName;
             RefreshReleaseList();
+            SaveLastReleaseItems();
             AppendSummary($"{kind.DisplayName()}: projeto adicionado.");
         }
 
@@ -248,7 +253,115 @@ namespace EasyBuilderRelease
             }
 
             RefreshReleaseList();
+            SaveLastReleaseItems();
             AppendSummary($"{item.Kind.DisplayName()}: removido da lista.");
+        }
+
+        private void LoadLastReleaseItems()
+        {
+            LastReleaseSettings settings;
+            try
+            {
+                settings = _lastReleaseStore.Load();
+            }
+            catch (Exception ex)
+            {
+                AppendSummary($"Aviso: nao foi possivel carregar o ultimo release: {ex.Message}");
+                return;
+            }
+
+            _lastReleaseRoot = settings.LastReleaseRoot;
+
+            var loaded = 0;
+            var skipped = 0;
+
+            foreach (var savedProject in settings.Projects)
+            {
+                if (!Enum.TryParse<ReleaseKind>(savedProject.Kind, ignoreCase: true, out var kind)
+                    || string.IsNullOrWhiteSpace(savedProject.ProjectFile)
+                    || _releaseItems.Any(item => item.Kind == kind))
+                {
+                    skipped++;
+                    continue;
+                }
+
+                var validation = _releaseRunner.ValidateProject(kind, savedProject.ProjectFile);
+                if (!validation.IsValid)
+                {
+                    skipped++;
+                    AppendSummary($"{kind.DisplayName()}: projeto salvo ignorado. {validation.Message}");
+                    continue;
+                }
+
+                _releaseItems.Add(new ReleaseItem(kind, savedProject.ProjectFile));
+                SetProjectTextBox(kind, savedProject.ProjectFile);
+                loaded++;
+            }
+
+            if (loaded > 0)
+            {
+                AppendSummary($"{loaded} projeto(s) carregado(s) do ultimo uso.");
+            }
+
+            if (!string.IsNullOrWhiteSpace(_lastReleaseRoot))
+            {
+                AppendSummary($"Ultimo release: {_lastReleaseRoot}");
+            }
+
+            if (skipped > 0)
+            {
+                AppendSummary($"{skipped} projeto(s) salvo(s) ignorado(s).");
+            }
+        }
+
+        private void SaveLastReleaseItems(string? lastReleaseRoot = null)
+        {
+            if (!string.IsNullOrWhiteSpace(lastReleaseRoot))
+            {
+                _lastReleaseRoot = lastReleaseRoot;
+            }
+
+            var settings = new LastReleaseSettings
+            {
+                SavedAt = DateTime.Now,
+                LastReleaseRoot = _lastReleaseRoot,
+                Projects = _releaseItems
+                    .OrderBy(item => item.Kind)
+                    .Select(item => new LastReleaseProject
+                    {
+                        Kind = item.Kind.ToString(),
+                        ProjectFile = item.ProjectFile
+                    })
+                    .ToList()
+            };
+
+            try
+            {
+                _lastReleaseStore.Save(settings);
+            }
+            catch (Exception ex)
+            {
+                AppendSummary($"Aviso: nao foi possivel salvar o ultimo release: {ex.Message}");
+            }
+        }
+
+        private void SetProjectTextBox(ReleaseKind kind, string value)
+        {
+            switch (kind)
+            {
+                case ReleaseKind.MauiAndroid:
+                    textBox1.Text = value;
+                    break;
+                case ReleaseKind.MauiWindows:
+                    textBox2.Text = value;
+                    break;
+                case ReleaseKind.Api:
+                    textBox3.Text = value;
+                    break;
+                case ReleaseKind.PrintServer:
+                    textBox8.Text = value;
+                    break;
+            }
         }
 
         private void RefreshReleaseList()
@@ -387,6 +500,11 @@ namespace EasyBuilderRelease
             }
 
             return null;
+        }
+
+        private static string GetLocalDataDirectory()
+        {
+            return FindProjectRoot() ?? AppContext.BaseDirectory;
         }
 
         private void WriteManifest(string releaseRoot, IReadOnlyCollection<ReleaseRunResult> results)
