@@ -9,11 +9,22 @@ namespace EasyBuilderRelease
         private readonly List<ReleaseItem> _releaseItems = [];
         private readonly LastReleaseStore _lastReleaseStore = new(GetLocalDataDirectory());
         private bool _isRunning;
+        private bool _isGitRunning;
         private string? _lastReleaseRoot;
+        private string? _gitRoot;
+        private TabControl? _mainTabControl;
+        private ListView? _gitCommitListView;
+        private TextBox? _gitRepositoryTextBox;
+        private TextBox? _gitCommitDetailsTextBox;
+        private Label? _gitStatusLabel;
+        private Button? _gitRefreshButton;
+        private Button? _gitCheckoutButton;
+        private Button? _gitCheckoutMainButton;
 
         public Form1()
         {
             InitializeComponent();
+            ConfigureMainTabs();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -22,6 +33,206 @@ namespace EasyBuilderRelease
             LoadLastReleaseItems();
             RefreshReleaseList();
             AppendSummary("Selecione os projetos .csproj e clique em Release em fila ou Release paralelo.");
+            _ = RefreshGitHistoryAsync();
+        }
+
+        private void ConfigureMainTabs()
+        {
+            var releaseControls = Controls
+                .Cast<Control>()
+                .Where(control => control is not TabControl)
+                .ToList();
+
+            _mainTabControl = new TabControl
+            {
+                Dock = DockStyle.Fill,
+                Name = "tabControlMain"
+            };
+
+            var releaseTabPage = new TabPage
+            {
+                Name = "tabPageReleases",
+                Text = "Releases"
+            };
+
+            var gitTabPage = new TabPage
+            {
+                Name = "tabPageGit",
+                Text = "Git"
+            };
+
+            Controls.Clear();
+            Controls.Add(_mainTabControl);
+            _mainTabControl.TabPages.Add(releaseTabPage);
+            _mainTabControl.TabPages.Add(gitTabPage);
+
+            foreach (var control in releaseControls)
+            {
+                releaseTabPage.Controls.Add(control);
+            }
+
+            ConfigureGitTab(gitTabPage);
+        }
+
+        private void ConfigureGitTab(TabPage gitTabPage)
+        {
+            var titleLabel = new Label
+            {
+                AutoSize = true,
+                Font = new Font(Font, FontStyle.Bold),
+                Location = new Point(18, 18),
+                Name = "labelGitTitle",
+                Text = "Gerenciador Git"
+            };
+
+            _gitRepositoryTextBox = new TextBox
+            {
+                Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right,
+                Location = new Point(18, 42),
+                Name = "textBoxGitRepository",
+                ReadOnly = true,
+                Size = new Size(740, 23)
+            };
+
+            _gitRefreshButton = new Button
+            {
+                Anchor = AnchorStyles.Top | AnchorStyles.Right,
+                Location = new Point(776, 41),
+                Name = "buttonGitRefresh",
+                Size = new Size(140, 25),
+                Text = "Atualizar historico",
+                UseVisualStyleBackColor = true
+            };
+            _gitRefreshButton.Click += gitRefreshButton_Click;
+
+            _gitCheckoutButton = new Button
+            {
+                Anchor = AnchorStyles.Top | AnchorStyles.Right,
+                Enabled = false,
+                Location = new Point(922, 41),
+                Name = "buttonGitCheckout",
+                Size = new Size(160, 25),
+                Text = "Checkout selecionado",
+                UseVisualStyleBackColor = true
+            };
+            _gitCheckoutButton.Click += gitCheckoutButton_Click;
+
+            _gitCheckoutMainButton = new Button
+            {
+                Anchor = AnchorStyles.Top | AnchorStyles.Right,
+                Location = new Point(1088, 41),
+                Name = "buttonGitCheckoutMain",
+                Size = new Size(160, 25),
+                Text = "Checkout main",
+                UseVisualStyleBackColor = true
+            };
+            _gitCheckoutMainButton.Click += gitCheckoutMainButton_Click;
+
+            _gitCommitListView = new ListView
+            {
+                Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left,
+                FullRowSelect = true,
+                GridLines = true,
+                HideSelection = false,
+                Location = new Point(18, 82),
+                MultiSelect = false,
+                Name = "listViewGitCommits",
+                Size = new Size(720, 520),
+                UseCompatibleStateImageBehavior = false,
+                View = View.Details
+            };
+            _gitCommitListView.Columns.Add("Hash", 82);
+            _gitCommitListView.Columns.Add("Data", 150);
+            _gitCommitListView.Columns.Add("Autor", 160);
+            _gitCommitListView.Columns.Add("Refs", 180);
+            _gitCommitListView.Columns.Add("Mensagem", 420);
+            _gitCommitListView.SelectedIndexChanged += gitCommitListView_SelectedIndexChanged;
+            _gitCommitListView.DoubleClick += gitCommitListView_DoubleClick;
+
+            _gitCommitDetailsTextBox = new TextBox
+            {
+                Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right,
+                Font = new Font("Consolas", 9F),
+                Location = new Point(754, 82),
+                Multiline = true,
+                Name = "textBoxGitCommitDetails",
+                ReadOnly = true,
+                ScrollBars = ScrollBars.Both,
+                Size = new Size(494, 520),
+                WordWrap = false
+            };
+
+            _gitStatusLabel = new Label
+            {
+                Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right,
+                AutoEllipsis = true,
+                Location = new Point(18, 616),
+                Name = "labelGitStatus",
+                Size = new Size(1230, 24),
+                Text = "Carregando historico Git..."
+            };
+
+            gitTabPage.Controls.Add(titleLabel);
+            gitTabPage.Controls.Add(_gitRepositoryTextBox);
+            gitTabPage.Controls.Add(_gitRefreshButton);
+            gitTabPage.Controls.Add(_gitCheckoutButton);
+            gitTabPage.Controls.Add(_gitCheckoutMainButton);
+            gitTabPage.Controls.Add(_gitCommitListView);
+            gitTabPage.Controls.Add(_gitCommitDetailsTextBox);
+            gitTabPage.Controls.Add(_gitStatusLabel);
+
+            gitTabPage.Resize += (_, _) => LayoutGitTab(gitTabPage);
+            LayoutGitTab(gitTabPage);
+        }
+
+        private void LayoutGitTab(TabPage gitTabPage)
+        {
+            if (_gitRepositoryTextBox is null
+                || _gitRefreshButton is null
+                || _gitCheckoutButton is null
+                || _gitCheckoutMainButton is null
+                || _gitCommitListView is null
+                || _gitCommitDetailsTextBox is null
+                || _gitStatusLabel is null)
+            {
+                return;
+            }
+
+            var width = Math.Max(gitTabPage.ClientSize.Width, 1000);
+            var height = Math.Max(gitTabPage.ClientSize.Height, 500);
+            const int margin = 18;
+            const int gap = 14;
+            const int buttonTop = 41;
+            const int contentTop = 82;
+            const int statusHeight = 24;
+            const int buttonWidth = 160;
+            const int refreshButtonWidth = 140;
+            var contentBottom = height - margin - statusHeight - 10;
+            var contentHeight = Math.Max(260, contentBottom - contentTop);
+            var listWidth = Math.Min(720, Math.Max(520, (width - (margin * 2) - gap) / 2));
+            var detailLeft = margin + listWidth + gap;
+            var detailWidth = Math.Max(320, width - detailLeft - margin);
+
+            _gitCheckoutMainButton.Location = new Point(width - margin - buttonWidth, buttonTop);
+            _gitCheckoutMainButton.Size = new Size(buttonWidth, 25);
+
+            _gitCheckoutButton.Location = new Point(_gitCheckoutMainButton.Left - gap - buttonWidth, buttonTop);
+            _gitCheckoutButton.Size = new Size(buttonWidth, 25);
+
+            _gitRefreshButton.Location = new Point(_gitCheckoutButton.Left - gap - refreshButtonWidth, buttonTop);
+            _gitRefreshButton.Size = new Size(refreshButtonWidth, 25);
+
+            _gitRepositoryTextBox.Location = new Point(margin, 42);
+            _gitRepositoryTextBox.Size = new Size(Math.Max(260, _gitRefreshButton.Left - margin - gap), 23);
+
+            _gitCommitListView.Location = new Point(margin, contentTop);
+            _gitCommitListView.Size = new Size(listWidth, contentHeight);
+
+            _gitCommitDetailsTextBox.Location = new Point(detailLeft, contentTop);
+            _gitCommitDetailsTextBox.Size = new Size(detailWidth, contentHeight);
+
+            _gitStatusLabel.Location = new Point(margin, height - margin - statusHeight);
+            _gitStatusLabel.Size = new Size(width - (margin * 2), statusHeight);
         }
 
         private void ConfigureLogTextBoxes()
@@ -459,6 +670,422 @@ namespace EasyBuilderRelease
             button6.Enabled = enabled;
             button7.Enabled = enabled;
             listView1.Enabled = enabled;
+            SetGitControlsEnabled(enabled);
+        }
+
+        private async void gitRefreshButton_Click(object? sender, EventArgs e)
+        {
+            await RefreshGitHistoryAsync();
+        }
+
+        private async void gitCommitListView_SelectedIndexChanged(object? sender, EventArgs e)
+        {
+            UpdateGitSelectionButtons();
+            await ShowSelectedCommitDetailsAsync();
+        }
+
+        private async void gitCommitListView_DoubleClick(object? sender, EventArgs e)
+        {
+            await CheckoutSelectedCommitAsync();
+        }
+
+        private async void gitCheckoutButton_Click(object? sender, EventArgs e)
+        {
+            await CheckoutSelectedCommitAsync();
+        }
+
+        private async void gitCheckoutMainButton_Click(object? sender, EventArgs e)
+        {
+            await CheckoutMainAsync();
+        }
+
+        private async Task RefreshGitHistoryAsync()
+        {
+            if (_isGitRunning)
+            {
+                return;
+            }
+
+            _isGitRunning = true;
+            SetGitControlsEnabled(false);
+            SetGitStatus("Carregando historico Git...");
+
+            try
+            {
+                var gitRoot = await GetGitRootAsync(GetLocalDataDirectory());
+                if (gitRoot is null)
+                {
+                    _gitRoot = null;
+                    SetGitRepositoryText("Repositorio Git nao encontrado.");
+                    SetGitDetails("Nao foi possivel encontrar um repositorio Git para este aplicativo.");
+                    SetGitStatus("Repositorio Git nao encontrado.");
+                    RefreshGitCommitList([], null);
+                    return;
+                }
+
+                _gitRoot = gitRoot;
+                SetGitRepositoryText(gitRoot);
+
+                var branchResult = await RunGitAsync(gitRoot, ["branch", "--show-current"]);
+                var headResult = await RunGitAsync(gitRoot, ["rev-parse", "HEAD"]);
+                var logResult = await RunGitAsync(gitRoot, [
+                    "log",
+                    "--all",
+                    "--date=iso-local",
+                    "--pretty=format:%H%x1f%h%x1f%ad%x1f%an%x1f%D%x1f%s%x1e"
+                ]);
+
+                if (logResult.ExitCode != 0)
+                {
+                    SetGitDetails(logResult.Output);
+                    SetGitStatus($"Falha ao carregar historico Git (exit code {logResult.ExitCode}).");
+                    RefreshGitCommitList([], null);
+                    return;
+                }
+
+                var commits = ParseGitLog(logResult.Output);
+                var head = headResult.ExitCode == 0 ? headResult.Output.Trim() : null;
+                var branch = branchResult.ExitCode == 0 && !string.IsNullOrWhiteSpace(branchResult.Output)
+                    ? branchResult.Output.Trim()
+                    : "HEAD destacado";
+
+                RefreshGitCommitList(commits, head);
+                SetGitStatus($"Branch: {branch} | Commits carregados: {commits.Count}");
+
+                if (commits.Count == 0)
+                {
+                    SetGitDetails("Nenhum commit encontrado.");
+                }
+            }
+            finally
+            {
+                _isGitRunning = false;
+                SetGitControlsEnabled(!_isRunning);
+            }
+        }
+
+        private void RefreshGitCommitList(IReadOnlyList<GitCommitInfo> commits, string? currentHead)
+        {
+            if (_gitCommitListView is null)
+            {
+                return;
+            }
+
+            _gitCommitListView.BeginUpdate();
+            try
+            {
+                _gitCommitListView.Items.Clear();
+
+                foreach (var commit in commits)
+                {
+                    var refs = commit.Decorations;
+                    var isCurrentHead = string.Equals(commit.FullHash, currentHead, StringComparison.OrdinalIgnoreCase);
+                    if (isCurrentHead && !refs.Contains("HEAD", StringComparison.OrdinalIgnoreCase))
+                    {
+                        refs = string.IsNullOrWhiteSpace(refs) ? "HEAD" : $"HEAD, {refs}";
+                    }
+
+                    var listItem = new ListViewItem(commit.ShortHash)
+                    {
+                        Tag = commit
+                    };
+                    listItem.SubItems.Add(commit.DateText);
+                    listItem.SubItems.Add(commit.Author);
+                    listItem.SubItems.Add(refs);
+                    listItem.SubItems.Add(commit.Subject);
+
+                    if (isCurrentHead)
+                    {
+                        listItem.Font = new Font(_gitCommitListView.Font, FontStyle.Bold);
+                    }
+
+                    _gitCommitListView.Items.Add(listItem);
+                }
+
+                foreach (ColumnHeader column in _gitCommitListView.Columns)
+                {
+                    column.Width = -2;
+                }
+            }
+            finally
+            {
+                _gitCommitListView.EndUpdate();
+            }
+
+            UpdateGitSelectionButtons();
+        }
+
+        private async Task ShowSelectedCommitDetailsAsync()
+        {
+            var commit = GetSelectedGitCommit();
+            if (commit is null)
+            {
+                return;
+            }
+
+            var gitRoot = await EnsureGitRootAsync();
+            if (gitRoot is null)
+            {
+                return;
+            }
+
+            SetGitDetails("Carregando detalhes do commit...");
+            var result = await RunGitAsync(gitRoot, [
+                "show",
+                "--stat",
+                "--name-status",
+                "--format=fuller",
+                "--no-ext-diff",
+                commit.FullHash
+            ]);
+
+            SetGitDetails(result.ExitCode == 0
+                ? result.Output
+                : $"Falha ao carregar detalhes do commit.\r\n\r\n{result.Output}");
+        }
+
+        private async Task CheckoutSelectedCommitAsync()
+        {
+            if (_isRunning || _isGitRunning)
+            {
+                return;
+            }
+
+            var commit = GetSelectedGitCommit();
+            if (commit is null)
+            {
+                MessageBox.Show(
+                    "Selecione um commit no historico.",
+                    "Easy Builder Release",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                return;
+            }
+
+            var gitRoot = await EnsureGitRootAsync();
+            if (gitRoot is null || !await EnsureCleanGitWorktreeAsync(gitRoot))
+            {
+                return;
+            }
+
+            var confirmation = MessageBox.Show(
+                $"Fazer checkout do commit {commit.ShortHash}?\r\n\r\n{commit.Subject}\r\n\r\nO repositorio ficara em HEAD destacado.",
+                "Confirmar checkout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning,
+                MessageBoxDefaultButton.Button2);
+
+            if (confirmation != DialogResult.Yes)
+            {
+                return;
+            }
+
+            await RunGitCheckoutAsync(gitRoot, ["checkout", "--detach", commit.FullHash], $"Checkout realizado: {commit.ShortHash}");
+        }
+
+        private async Task CheckoutMainAsync()
+        {
+            if (_isRunning || _isGitRunning)
+            {
+                return;
+            }
+
+            var gitRoot = await EnsureGitRootAsync();
+            if (gitRoot is null || !await EnsureCleanGitWorktreeAsync(gitRoot))
+            {
+                return;
+            }
+
+            var confirmation = MessageBox.Show(
+                "Fazer checkout da branch main?",
+                "Confirmar checkout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+            if (confirmation != DialogResult.Yes)
+            {
+                return;
+            }
+
+            await RunGitCheckoutAsync(gitRoot, ["checkout", "main"], "Checkout realizado: main");
+        }
+
+        private async Task RunGitCheckoutAsync(string gitRoot, IReadOnlyList<string> arguments, string successMessage)
+        {
+            _isGitRunning = true;
+            SetGitControlsEnabled(false);
+            SetGitStatus("Executando checkout...");
+
+            try
+            {
+                var result = await RunGitAsync(gitRoot, arguments);
+                SetGitDetails(result.Output);
+
+                if (result.ExitCode == 0)
+                {
+                    AppendSummary($"Git: {successMessage}.");
+                    SetGitStatus(successMessage);
+                }
+                else
+                {
+                    AppendSummary($"Git: checkout falhou (exit code {result.ExitCode}).");
+                    SetGitStatus($"Checkout falhou (exit code {result.ExitCode}).");
+                }
+            }
+            finally
+            {
+                _isGitRunning = false;
+                SetGitControlsEnabled(!_isRunning);
+            }
+
+            await RefreshGitHistoryAsync();
+        }
+
+        private async Task<bool> EnsureCleanGitWorktreeAsync(string gitRoot)
+        {
+            var statusResult = await RunGitAsync(gitRoot, ["status", "--porcelain"]);
+            if (statusResult.ExitCode != 0)
+            {
+                SetGitDetails(statusResult.Output);
+                SetGitStatus($"Nao foi possivel verificar status Git (exit code {statusResult.ExitCode}).");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(statusResult.Output))
+            {
+                return true;
+            }
+
+            SetGitDetails($"Existem alteracoes pendentes. Commit ou descarte antes de fazer checkout.\r\n\r\n{statusResult.Output}");
+            SetGitStatus("Checkout bloqueado: existem alteracoes pendentes.");
+
+            MessageBox.Show(
+                "Existem alteracoes pendentes no repositorio. Faca commit, push ou descarte essas alteracoes antes de fazer checkout.",
+                "Checkout bloqueado",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+
+            return false;
+        }
+
+        private async Task<string?> EnsureGitRootAsync()
+        {
+            if (!string.IsNullOrWhiteSpace(_gitRoot) && Directory.Exists(_gitRoot))
+            {
+                return _gitRoot;
+            }
+
+            _gitRoot = await GetGitRootAsync(GetLocalDataDirectory());
+            if (_gitRoot is null)
+            {
+                SetGitStatus("Repositorio Git nao encontrado.");
+            }
+
+            return _gitRoot;
+        }
+
+        private GitCommitInfo? GetSelectedGitCommit()
+        {
+            if (_gitCommitListView is null || _gitCommitListView.SelectedItems.Count == 0)
+            {
+                return null;
+            }
+
+            return _gitCommitListView.SelectedItems[0].Tag as GitCommitInfo;
+        }
+
+        private void SetGitControlsEnabled(bool enabled)
+        {
+            var canUse = enabled && !_isRunning && !_isGitRunning;
+
+            if (_gitRefreshButton is not null)
+            {
+                _gitRefreshButton.Enabled = canUse;
+            }
+
+            if (_gitCheckoutMainButton is not null)
+            {
+                _gitCheckoutMainButton.Enabled = canUse;
+            }
+
+            if (_gitCommitListView is not null)
+            {
+                _gitCommitListView.Enabled = canUse;
+            }
+
+            UpdateGitSelectionButtons();
+        }
+
+        private void UpdateGitSelectionButtons()
+        {
+            if (_gitCheckoutButton is null)
+            {
+                return;
+            }
+
+            _gitCheckoutButton.Enabled = !_isRunning
+                && !_isGitRunning
+                && GetSelectedGitCommit() is not null;
+        }
+
+        private void SetGitRepositoryText(string text)
+        {
+            if (_gitRepositoryTextBox is not null)
+            {
+                _gitRepositoryTextBox.Text = text;
+            }
+        }
+
+        private void SetGitDetails(string text)
+        {
+            if (_gitCommitDetailsTextBox is null)
+            {
+                return;
+            }
+
+            _gitCommitDetailsTextBox.Text = text;
+            _gitCommitDetailsTextBox.SelectionStart = 0;
+            _gitCommitDetailsTextBox.ScrollToCaret();
+        }
+
+        private void SetGitStatus(string text)
+        {
+            if (_gitStatusLabel is not null)
+            {
+                _gitStatusLabel.Text = text;
+            }
+        }
+
+        private static List<GitCommitInfo> ParseGitLog(string output)
+        {
+            var commits = new List<GitCommitInfo>();
+            var records = output.Split('\u001e', StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (var rawRecord in records)
+            {
+                var record = rawRecord.Trim('\r', '\n');
+                if (string.IsNullOrWhiteSpace(record))
+                {
+                    continue;
+                }
+
+                var fields = record.Split('\u001f');
+                if (fields.Length < 6)
+                {
+                    continue;
+                }
+
+                commits.Add(new GitCommitInfo(
+                    fields[0],
+                    fields[1],
+                    fields[2],
+                    fields[3],
+                    fields[4],
+                    fields[5]));
+            }
+
+            return commits;
         }
 
         private string CreateReleaseRoot()
@@ -622,5 +1249,13 @@ namespace EasyBuilderRelease
         }
 
         private sealed record GitResult(int ExitCode, string Output);
+
+        private sealed record GitCommitInfo(
+            string FullHash,
+            string ShortHash,
+            string DateText,
+            string Author,
+            string Decorations,
+            string Subject);
     }
 }
