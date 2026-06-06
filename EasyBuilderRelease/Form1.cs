@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Text;
 
 namespace EasyBuilderRelease
@@ -124,9 +125,15 @@ namespace EasyBuilderRelease
 
             WriteManifest(releaseRoot, results);
             AppendSummary($"Manifesto: {Path.Combine(releaseRoot, "manifesto-release.txt")}");
-            AppendSummary(results.All(result => result.Succeeded)
-                ? "Release finalizado com sucesso."
-                : "Release finalizado com falhas. Veja os logs.");
+            if (results.All(result => result.Succeeded))
+            {
+                AppendSummary("Release finalizado com sucesso.");
+                await CommitReleaseAsync(releaseRoot);
+            }
+            else
+            {
+                AppendSummary("Release finalizado com falhas. Commit nao executado.");
+            }
         }
 
         private async Task<ReleaseRunResult> RunReleaseItemAsync(ReleaseItem item, string logsDirectory)
@@ -405,5 +412,97 @@ namespace EasyBuilderRelease
 
             File.WriteAllText(manifest, builder.ToString(), new UTF8Encoding(false));
         }
+
+        private async Task CommitReleaseAsync(string releaseRoot)
+        {
+            var gitRoot = await GetGitRootAsync(releaseRoot);
+            if (gitRoot is null)
+            {
+                AppendSummary("Commit nao executado: pasta de release nao esta dentro de um repositorio Git.");
+                return;
+            }
+
+            var relativeReleasePath = Path.GetRelativePath(gitRoot, releaseRoot).Replace('\\', '/');
+            var message = $"EasyPro Releases {DateTime.Now:dd-MM-yyyy}";
+
+            AppendSummary($"Git add: {relativeReleasePath}");
+            var addResult = await RunGitAsync(gitRoot, ["add", "-f", "--", relativeReleasePath]);
+            AppendSummary(addResult.Output);
+
+            if (addResult.ExitCode != 0)
+            {
+                AppendSummary($"Commit nao executado: git add falhou (exit code {addResult.ExitCode}).");
+                return;
+            }
+
+            var diffResult = await RunGitAsync(gitRoot, ["diff", "--cached", "--quiet", "--", relativeReleasePath]);
+            if (diffResult.ExitCode == 0)
+            {
+                AppendSummary("Commit nao executado: nao ha arquivos novos/alterados no release.");
+                return;
+            }
+
+            AppendSummary($"Git commit: {message}");
+            var commitResult = await RunGitAsync(gitRoot, ["commit", "-m", message, "--", relativeReleasePath]);
+            AppendSummary(commitResult.Output);
+
+            AppendSummary(commitResult.ExitCode == 0
+                ? "Commit criado com sucesso."
+                : $"Commit falhou (exit code {commitResult.ExitCode}).");
+        }
+
+        private static async Task<string?> GetGitRootAsync(string startDirectory)
+        {
+            var result = await RunGitAsync(startDirectory, ["rev-parse", "--show-toplevel"]);
+            if (result.ExitCode != 0)
+            {
+                return null;
+            }
+
+            return result.Output
+                .Split([Environment.NewLine], StringSplitOptions.RemoveEmptyEntries)
+                .FirstOrDefault()
+                ?.Trim();
+        }
+
+        private static async Task<GitResult> RunGitAsync(string workingDirectory, IReadOnlyList<string> arguments)
+        {
+            var output = new StringBuilder();
+            var startInfo = new ProcessStartInfo
+            {
+                FileName = "git",
+                WorkingDirectory = workingDirectory,
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                CreateNoWindow = true
+            };
+
+            foreach (var argument in arguments)
+            {
+                startInfo.ArgumentList.Add(argument);
+            }
+
+            try
+            {
+                using var process = new Process { StartInfo = startInfo };
+                process.Start();
+
+                var standardOutput = process.StandardOutput.ReadToEndAsync();
+                var standardError = process.StandardError.ReadToEndAsync();
+                await process.WaitForExitAsync();
+
+                output.Append(await standardOutput);
+                output.Append(await standardError);
+
+                return new GitResult(process.ExitCode, output.ToString().Trim());
+            }
+            catch (Exception ex)
+            {
+                return new GitResult(-1, ex.Message);
+            }
+        }
+
+        private sealed record GitResult(int ExitCode, string Output);
     }
 }
