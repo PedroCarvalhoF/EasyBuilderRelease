@@ -1,0 +1,12 @@
+[15:01:36] dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase\EasyLoginBase.csproj -c Release -f net9.0 -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-08_150136\03_API --nologo
+[15:01:39]   Determinando os projetos a serem restaurados...
+[15:01:58]   Todos os projetos estÃ£o atualizados para restauraÃ§Ã£o.
+[15:02:22]   EasyLoginBase.Domain -> C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Domain\bin\Release\net9.0\EasyLoginBase.Domain.dll
+[15:02:24]   EasyLoginBase.InfrastructureData.Dapper -> C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.InfrastructureData.Dapper\bin\Release\net9.0\EasyLoginBase.InfrastructureData.Dapper.dll
+[15:02:24]   EasyLoginBase.Application -> C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Application\bin\Release\net9.0\EasyLoginBase.Application.dll
+[15:02:37]   EasyLoginBase.InfrastructureData -> C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.InfrastructureData\bin\Release\net9.0\EasyLoginBase.InfrastructureData.dll
+[15:02:38]   EasyLoginBase.Services -> C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Services\bin\Release\net9.0\EasyLoginBase.Services.dll
+[15:02:38]   EasyLoginBase.Services.Migracao -> C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Services.Migracao\bin\Release\net9.0\EasyLoginBase.Services.Migracao.dll
+[15:02:45]   EasyLoginBase.CrossCutting -> C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.CrossCutting\bin\Release\net9.0\EasyLoginBase.CrossCutting.dll
+[15:02:46]   EasyLoginBase -> C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase\bin\Release\net9.0\EasyLoginBase.dll
+[15:02:50]   EasyLoginBase -> C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-08_150136\03_API\
