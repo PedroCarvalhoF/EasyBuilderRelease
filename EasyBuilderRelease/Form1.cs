@@ -1237,9 +1237,20 @@ namespace EasyBuilderRelease
             var commitResult = await RunGitAsync(gitRoot, ["commit", "-m", message, "--", ReleaseGitPathspec]);
             AppendSummary(commitResult.Output);
 
-            AppendSummary(commitResult.ExitCode == 0
-                ? "Commit criado com sucesso."
-                : $"Commit falhou (exit code {commitResult.ExitCode}).");
+            if (commitResult.ExitCode != 0)
+            {
+                AppendSummary($"Commit falhou (exit code {commitResult.ExitCode}).");
+                return;
+            }
+
+            AppendSummary("Commit criado com sucesso.");
+            AppendSummary("Git push: enviando commits para o remoto configurado...");
+
+            var pushResult = await RunGitAsync(gitRoot, ["push"]);
+            AppendSummary(pushResult.Output);
+            AppendSummary(pushResult.ExitCode == 0
+                ? "Push concluido com sucesso."
+                : $"Push falhou (exit code {pushResult.ExitCode}).");
         }
 
         private static async Task<string?> GetGitRootAsync(string startDirectory)
