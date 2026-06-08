@@ -1,0 +1,5 @@
+[00:36:00] dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerServidorImpressoras\EasyManagerServidorImpressoras\EasyManagerServidorImpressoras.csproj -c Release -f net9.0-windows --runtime win-x64 --self-contained true -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-08_003600\04_ServidorImpressao --nologo
+[00:36:14]   Determinando os projetos a serem restaurados...
+[00:36:14]   Todos os projetos estÃ£o atualizados para restauraÃ§Ã£o.
+[00:36:14]   EasyManagerServidorImpressoras -> C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerServidorImpressoras\EasyManagerServidorImpressoras\bin\Release\net9.0-windows\win-x64\EasyManagerServidorImpressoras.dll
+[00:36:14]   EasyManagerServidorImpressoras -> C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-08_003600\04_ServidorImpressao\

@@ -1,0 +1,33 @@
+COMERCIO FACIL - RELEASE
+Gerado em: 2026-06-08 00:45:01
+Pasta: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-08_003600
+
+Itens:
+- MAUI Android
+  Projeto: C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj
+  Saida: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-08_003600\01_MauiAndroid
+  Log: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-08_003600\logs\maui-android.log
+  Comando: dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj -c Release -f net9.0-android -p:AndroidPackageFormat=apk -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-08_003600\01_MauiAndroid --nologo
+  ExitCode: 0
+  Status: Concluido
+- MAUI Windows
+  Projeto: C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj
+  Saida: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-08_003600\02_MauiWindows
+  Log: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-08_003600\logs\maui-windows.log
+  Comando: dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj -c Release -f net9.0-windows10.0.19041.0 -p:WindowsPackageType=None -p:RuntimeIdentifierOverride=win10-x64 -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-08_003600\02_MauiWindows --nologo
+  ExitCode: 0
+  Status: Concluido
+- API
+  Projeto: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase\EasyLoginBase.csproj
+  Saida: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-08_003600\03_API
+  Log: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-08_003600\logs\api.log
+  Comando: dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase\EasyLoginBase.csproj -c Release -f net9.0 -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-08_003600\03_API --nologo
+  ExitCode: 0
+  Status: Concluido
+- Servidor Impressao
+  Projeto: C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerServidorImpressoras\EasyManagerServidorImpressoras\EasyManagerServidorImpressoras.csproj
+  Saida: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-08_003600\04_ServidorImpressao
+  Log: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-08_003600\logs\servidor-impressao.log
+  Comando: dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerServidorImpressoras\EasyManagerServidorImpressoras\EasyManagerServidorImpressoras.csproj -c Release -f net9.0-windows --runtime win-x64 --self-contained true -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-08_003600\04_ServidorImpressao --nologo
+  ExitCode: 0
+  Status: Concluido
