@@ -1,0 +1,3 @@
+[12:14:48] dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase\EasyLoginBase.csproj -c Release -f net9.0 -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-08_121447\03_API --nologo
+[12:14:55]   Determinando os projetos a serem restaurados...
+[12:14:55]   Todos os projetos estÃ£o atualizados para restauraÃ§Ã£o.

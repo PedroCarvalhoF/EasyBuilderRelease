@@ -5,6 +5,8 @@ namespace EasyBuilderRelease
 {
     public partial class Form1 : Form
     {
+        private const string ReleaseFolderPrefix = "COMERCIO_FACIL_RELEASE_";
+        private const string ReleaseGitPathspec = "COMERCIO_FACIL_RELEASE_*";
         private readonly ReleaseRunner _releaseRunner = new();
         private readonly List<ReleaseItem> _releaseItems = [];
         private readonly LastReleaseStore _lastReleaseStore = new(GetLocalDataDirectory());
@@ -294,7 +296,19 @@ namespace EasyBuilderRelease
             SetControlsEnabled(false);
             ClearLogs();
 
-            var releaseRoot = CreateReleaseRoot();
+            string releaseRoot;
+            try
+            {
+                releaseRoot = CreateReleaseRoot();
+            }
+            catch (Exception ex)
+            {
+                _isRunning = false;
+                SetControlsEnabled(true);
+                AppendSummary($"Nao foi possivel preparar a pasta de release: {ex.Message}");
+                return;
+            }
+
             var logsDirectory = Path.Combine(releaseRoot, "logs");
             Directory.CreateDirectory(logsDirectory);
 
@@ -1091,7 +1105,13 @@ namespace EasyBuilderRelease
         private string CreateReleaseRoot()
         {
             var baseDirectory = FindProjectRoot() ?? AppContext.BaseDirectory;
-            var baseName = $"COMERCIO_FACIL_RELEASE_{DateTime.Now:yyyy-MM-dd_HHmmss}";
+            var removedReleaseCount = DeleteExistingReleaseDirectories(baseDirectory);
+            if (removedReleaseCount > 0)
+            {
+                AppendSummary($"{removedReleaseCount} pasta(s) de release antiga(s) removida(s).");
+            }
+
+            var baseName = $"{ReleaseFolderPrefix}{DateTime.Now:yyyy-MM-dd_HHmmss}";
             var releaseRoot = Path.Combine(baseDirectory, baseName);
 
             if (!Directory.Exists(releaseRoot))
@@ -1111,6 +1131,26 @@ namespace EasyBuilderRelease
             }
 
             throw new InvalidOperationException("Nao foi possivel criar uma pasta de release unica.");
+        }
+
+        private static int DeleteExistingReleaseDirectories(string baseDirectory)
+        {
+            if (!Directory.Exists(baseDirectory))
+            {
+                return 0;
+            }
+
+            var releaseDirectories = Directory
+                .EnumerateDirectories(baseDirectory, $"{ReleaseFolderPrefix}*", SearchOption.TopDirectoryOnly)
+                .OrderBy(path => path, StringComparer.OrdinalIgnoreCase)
+                .ToList();
+
+            foreach (var releaseDirectory in releaseDirectories)
+            {
+                Directory.Delete(releaseDirectory, recursive: true);
+            }
+
+            return releaseDirectories.Count;
         }
 
         private static string? FindProjectRoot()
@@ -1167,11 +1207,10 @@ namespace EasyBuilderRelease
                 return;
             }
 
-            var relativeReleasePath = Path.GetRelativePath(gitRoot, releaseRoot).Replace('\\', '/');
             var message = $"EasyPro Releases {DateTime.Now:dd-MM-yyyy}";
 
-            AppendSummary($"Git add: {relativeReleasePath}");
-            var addResult = await RunGitAsync(gitRoot, ["add", "-f", "--", relativeReleasePath]);
+            AppendSummary($"Git add: {ReleaseGitPathspec}");
+            var addResult = await RunGitAsync(gitRoot, ["add", "-A", "-f", "--", ReleaseGitPathspec]);
             AppendSummary(addResult.Output);
 
             if (addResult.ExitCode != 0)
@@ -1180,15 +1219,22 @@ namespace EasyBuilderRelease
                 return;
             }
 
-            var diffResult = await RunGitAsync(gitRoot, ["diff", "--cached", "--quiet", "--", relativeReleasePath]);
+            var diffResult = await RunGitAsync(gitRoot, ["diff", "--cached", "--quiet", "--", ReleaseGitPathspec]);
             if (diffResult.ExitCode == 0)
             {
                 AppendSummary("Commit nao executado: nao ha arquivos novos/alterados no release.");
                 return;
             }
 
+            if (diffResult.ExitCode > 1)
+            {
+                AppendSummary($"Commit nao executado: git diff falhou (exit code {diffResult.ExitCode}).");
+                AppendSummary(diffResult.Output);
+                return;
+            }
+
             AppendSummary($"Git commit: {message}");
-            var commitResult = await RunGitAsync(gitRoot, ["commit", "-m", message, "--", relativeReleasePath]);
+            var commitResult = await RunGitAsync(gitRoot, ["commit", "-m", message, "--", ReleaseGitPathspec]);
             AppendSummary(commitResult.Output);
 
             AppendSummary(commitResult.ExitCode == 0
