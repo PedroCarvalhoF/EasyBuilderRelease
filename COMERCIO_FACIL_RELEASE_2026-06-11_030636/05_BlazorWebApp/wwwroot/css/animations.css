@@ -1,0 +1,51 @@
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeScaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.spinner {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    border: 3px solid #ffedd5;
+    border-top-color: var(--color-accent);
+    border-radius: 50%;
+    animation: spin 700ms linear infinite;
+}
+
+.spinner-small {
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+}
+
+.page-stack,
+.app-card,
+.auth-panel,
+.app-modal {
+    animation: fadeScaleIn 180ms ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
