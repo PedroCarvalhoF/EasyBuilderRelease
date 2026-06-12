@@ -31,7 +31,7 @@ internal sealed class ReleaseRunner
         var sdk = document.Root?.Attribute("Sdk")?.Value ?? "";
         var values = document
             .Descendants()
-            .Where(element => element.Name.LocalName is "TargetFramework" or "TargetFrameworks" or "UseMaui")
+            .Where(element => element.Name.LocalName is "TargetFramework" or "TargetFrameworks" or "UseMaui" or "UseWindowsForms")
             .GroupBy(element => element.Name.LocalName, StringComparer.OrdinalIgnoreCase)
             .ToDictionary(
                 group => group.Key,
@@ -45,15 +45,23 @@ internal sealed class ReleaseRunner
         var useMaui = values.TryGetValue("UseMaui", out var useMauiValue)
             && string.Equals(useMauiValue.Trim(), "true", StringComparison.OrdinalIgnoreCase);
 
-        if (kind is ReleaseKind.MauiAndroid or ReleaseKind.MauiWindows && !useMaui)
+        var useWindowsForms = values.TryGetValue("UseWindowsForms", out var useWindowsFormsValue)
+            && string.Equals(useWindowsFormsValue.Trim(), "true", StringComparison.OrdinalIgnoreCase);
+
+        if ((kind is ReleaseKind.MauiAndroid or ReleaseKind.MauiWindows) && !useMaui)
         {
             return ReleaseValidationResult.Fail($"{kind.DisplayName()} exige <UseMaui>true</UseMaui>.");
         }
 
-        if ((kind is ReleaseKind.Api or ReleaseKind.PrintServer)
+        if ((kind is ReleaseKind.Api or ReleaseKind.PrintServer or ReleaseKind.BlazorWeb)
             && !sdk.Contains("Microsoft.NET.Sdk.Web", StringComparison.OrdinalIgnoreCase))
         {
             return ReleaseValidationResult.Fail($"{kind.DisplayName()} exige Project Sdk=\"Microsoft.NET.Sdk.Web\".");
+        }
+
+        if (kind is ReleaseKind.WindowsForms && !useWindowsForms)
+        {
+            return ReleaseValidationResult.Fail($"{kind.DisplayName()} exige <UseWindowsForms>true</UseWindowsForms>.");
         }
 
         var expectedFramework = kind.TargetFramework();

@@ -7,7 +7,9 @@ internal enum ReleaseKind
     MauiAndroid,
     MauiWindows,
     Api,
-    PrintServer
+    PrintServer,
+    BlazorWeb,
+    WindowsForms
 }
 
 internal static class ReleaseKindExtensions
@@ -18,6 +20,8 @@ internal static class ReleaseKindExtensions
         ReleaseKind.MauiWindows => "MAUI Windows",
         ReleaseKind.Api => "API",
         ReleaseKind.PrintServer => "Servidor Impressao",
+        ReleaseKind.BlazorWeb => "Blazor WebApp",
+        ReleaseKind.WindowsForms => "Windows Forms",
         _ => kind.ToString()
     };
 
@@ -27,6 +31,8 @@ internal static class ReleaseKindExtensions
         ReleaseKind.MauiWindows => "02_MauiWindows",
         ReleaseKind.Api => "03_API",
         ReleaseKind.PrintServer => "04_ServidorImpressao",
+        ReleaseKind.BlazorWeb => "05_BlazorWebApp",
+        ReleaseKind.WindowsForms => "06_WindowsForms",
         _ => kind.ToString()
     };
 
@@ -36,6 +42,8 @@ internal static class ReleaseKindExtensions
         ReleaseKind.MauiWindows => "maui-windows.log",
         ReleaseKind.Api => "api.log",
         ReleaseKind.PrintServer => "servidor-impressao.log",
+        ReleaseKind.BlazorWeb => "blazor-webapp.log",
+        ReleaseKind.WindowsForms => "windows-forms.log",
         _ => $"{kind}.log"
     };
 
@@ -45,6 +53,8 @@ internal static class ReleaseKindExtensions
         ReleaseKind.MauiWindows => "net9.0-windows10.0.19041.0",
         ReleaseKind.Api => "net9.0",
         ReleaseKind.PrintServer => "net9.0-windows",
+        ReleaseKind.BlazorWeb => "net9.0",
+        ReleaseKind.WindowsForms => "net9.0-windows",
         _ => ""
     };
 
@@ -78,11 +88,20 @@ internal static class ReleaseKindExtensions
                 args.Add("--self-contained");
                 args.Add("true");
                 break;
+            case ReleaseKind.WindowsForms:
+                args.Add("--runtime");
+                args.Add("win-x64");
+                args.Add("--self-contained");
+                args.Add("true");
+                break;
         }
 
         args.Add("-o");
         args.Add(outputDirectory);
         args.Add("--nologo");
+        args.Add("--verbosity");
+        args.Add("minimal");
+        args.Add("/m");
         return args;
     }
 

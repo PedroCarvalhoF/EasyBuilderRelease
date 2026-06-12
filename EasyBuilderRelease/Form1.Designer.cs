@@ -49,15 +49,15 @@
             button7 = new Button();
             textBox8 = new TextBox();
             label4 = new Label();
-            panel1 = new Panel();
             textBox7 = new TextBox();
             textBox6 = new TextBox();
             textBox5 = new TextBox();
             textBox4 = new TextBox();
             button5 = new Button();
             button6 = new Button();
+            tableLayoutPanel1 = new TableLayoutPanel();
             contextMenuStrip1.SuspendLayout();
-            panel1.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -65,7 +65,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(26, 31);
             label1.Name = "label1";
-            label1.Size = new Size(84, 15);
+            label1.Size = new Size(83, 15);
             label1.TabIndex = 0;
             label1.Text = "MAUI Android";
             // 
@@ -93,8 +93,7 @@
             listView1.ContextMenuStrip = contextMenuStrip1;
             listView1.FullRowSelect = true;
             listView1.GridLines = true;
-            listView1.HideSelection = false;
-            listView1.Location = new Point(26, 230);
+            listView1.Location = new Point(26, 532);
             listView1.MultiSelect = false;
             listView1.Name = "listView1";
             listView1.Size = new Size(591, 236);
@@ -127,12 +126,12 @@
             // 
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { removerSelecionadoToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(190, 26);
+            contextMenuStrip1.Size = new Size(188, 26);
             // 
             // removerSelecionadoToolStripMenuItem
             // 
             removerSelecionadoToolStripMenuItem.Name = "removerSelecionadoToolStripMenuItem";
-            removerSelecionadoToolStripMenuItem.Size = new Size(189, 22);
+            removerSelecionadoToolStripMenuItem.Size = new Size(187, 22);
             removerSelecionadoToolStripMenuItem.Text = "Remover selecionado";
             removerSelecionadoToolStripMenuItem.Click += removerSelecionadoToolStripMenuItem_Click;
             // 
@@ -169,7 +168,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(26, 81);
             label2.Name = "label2";
-            label2.Size = new Size(88, 15);
+            label2.Size = new Size(89, 15);
             label2.TabIndex = 5;
             label2.Text = "MAUI Windows";
             // 
@@ -196,7 +195,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(26, 132);
             label3.Name = "label3";
-            label3.Size = new Size(23, 15);
+            label3.Size = new Size(25, 15);
             label3.TabIndex = 8;
             label3.Text = "API";
             // 
@@ -223,72 +222,59 @@
             label4.AutoSize = true;
             label4.Location = new Point(26, 183);
             label4.Name = "label4";
-            label4.Size = new Size(118, 15);
+            label4.Size = new Size(107, 15);
             label4.TabIndex = 14;
             label4.Text = "Servidor Impressao";
             // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.Controls.Add(textBox7);
-            panel1.Controls.Add(textBox6);
-            panel1.Controls.Add(textBox5);
-            panel1.Controls.Add(textBox4);
-            panel1.Location = new Point(634, 48);
-            panel1.Name = "panel1";
-            panel1.Padding = new Padding(10);
-            panel1.Size = new Size(656, 620);
-            panel1.TabIndex = 11;
-            // 
             // textBox7
             // 
-            textBox7.Dock = DockStyle.Top;
+            textBox7.Dock = DockStyle.Fill;
             textBox7.Font = new Font("Consolas", 9F);
-            textBox7.Location = new Point(10, 493);
+            textBox7.Location = new Point(3, 483);
             textBox7.Multiline = true;
             textBox7.Name = "textBox7";
             textBox7.ReadOnly = true;
             textBox7.ScrollBars = ScrollBars.Both;
-            textBox7.Size = new Size(636, 161);
+            textBox7.Size = new Size(617, 156);
             textBox7.TabIndex = 3;
             textBox7.WordWrap = false;
             // 
             // textBox6
             // 
-            textBox6.Dock = DockStyle.Top;
+            textBox6.Dock = DockStyle.Fill;
             textBox6.Font = new Font("Consolas", 9F);
-            textBox6.Location = new Point(10, 332);
+            textBox6.Location = new Point(3, 323);
             textBox6.Multiline = true;
             textBox6.Name = "textBox6";
             textBox6.ReadOnly = true;
             textBox6.ScrollBars = ScrollBars.Both;
-            textBox6.Size = new Size(636, 161);
+            textBox6.Size = new Size(617, 154);
             textBox6.TabIndex = 2;
             textBox6.WordWrap = false;
             // 
             // textBox5
             // 
-            textBox5.Dock = DockStyle.Top;
+            textBox5.Dock = DockStyle.Fill;
             textBox5.Font = new Font("Consolas", 9F);
-            textBox5.Location = new Point(10, 171);
+            textBox5.Location = new Point(3, 163);
             textBox5.Multiline = true;
             textBox5.Name = "textBox5";
             textBox5.ReadOnly = true;
             textBox5.ScrollBars = ScrollBars.Both;
-            textBox5.Size = new Size(636, 161);
+            textBox5.Size = new Size(617, 154);
             textBox5.TabIndex = 1;
             textBox5.WordWrap = false;
             // 
             // textBox4
             // 
-            textBox4.Dock = DockStyle.Top;
+            textBox4.Dock = DockStyle.Fill;
             textBox4.Font = new Font("Consolas", 9F);
-            textBox4.Location = new Point(10, 10);
+            textBox4.Location = new Point(3, 3);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
             textBox4.ReadOnly = true;
             textBox4.ScrollBars = ScrollBars.Both;
-            textBox4.Size = new Size(636, 161);
+            textBox4.Size = new Size(617, 154);
             textBox4.TabIndex = 0;
             textBox4.WordWrap = false;
             // 
@@ -312,14 +298,33 @@
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(textBox4, 0, 0);
+            tableLayoutPanel1.Controls.Add(textBox7, 0, 3);
+            tableLayoutPanel1.Controls.Add(textBox6, 0, 2);
+            tableLayoutPanel1.Controls.Add(textBox5, 0, 1);
+            tableLayoutPanel1.Location = new Point(623, 49);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.Size = new Size(623, 642);
+            tableLayoutPanel1.TabIndex = 17;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1302, 680);
+            ClientSize = new Size(1252, 696);
+            Controls.Add(tableLayoutPanel1);
             Controls.Add(button6);
             Controls.Add(button5);
-            Controls.Add(panel1);
             Controls.Add(button7);
             Controls.Add(textBox8);
             Controls.Add(label4);
@@ -340,8 +345,8 @@
             WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
             contextMenuStrip1.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -359,7 +364,6 @@
         private Button button4;
         private TextBox textBox3;
         private Label label3;
-        private Panel panel1;
         private TextBox textBox7;
         private TextBox textBox6;
         private TextBox textBox5;
@@ -375,5 +379,6 @@
         private Button button7;
         private TextBox textBox8;
         private Label label4;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

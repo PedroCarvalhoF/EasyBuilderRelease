@@ -7,6 +7,8 @@ namespace EasyBuilderRelease
     {
         private const string ReleaseFolderPrefix = "COMERCIO_FACIL_RELEASE_";
         private const string ReleaseGitPathspec = "COMERCIO_FACIL_RELEASE_*";
+        private const string DefaultBlazorProjectPath = @"C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\EasyLoginBase.WebAppBlazor.csproj";
+        private const string DefaultWindowsFormsProjectPath = @"C:\Users\PEDRO\Desktop\EasyPRO\EasyModuloPontoVendaDesktop\EasyModuloPontoVendaDesktop\EasyModuloPontoVendaDesktop.csproj";
         private readonly ReleaseRunner _releaseRunner = new();
         private readonly List<ReleaseItem> _releaseItems = [];
         private readonly LastReleaseStore _lastReleaseStore = new(GetLocalDataDirectory());
@@ -22,6 +24,15 @@ namespace EasyBuilderRelease
         private Button? _gitRefreshButton;
         private Button? _gitCheckoutButton;
         private Button? _gitCheckoutMainButton;
+        private Label? _blazorLabel;
+        private TextBox? _blazorProjectTextBox;
+        private Button? _blazorButton;
+        private Label? _windowsFormsLabel;
+        private TextBox? _windowsFormsProjectTextBox;
+        private Button? _windowsFormsButton;
+        private TextBox? _windowsFormsLogTextBox;
+        private TextBox? _blazorLogTextBox;
+        private TextBox? _summaryLogTextBox;
 
         public Form1()
         {
@@ -33,6 +44,7 @@ namespace EasyBuilderRelease
         {
             ConfigureLogTextBoxes();
             LoadLastReleaseItems();
+            LoadDefaultReleaseProjects();
             RefreshReleaseList();
             AppendSummary("Selecione os projetos .csproj e clique em Release em fila ou Release paralelo.");
             _ = RefreshGitHistoryAsync();
@@ -73,7 +85,155 @@ namespace EasyBuilderRelease
                 releaseTabPage.Controls.Add(control);
             }
 
+            ConfigureAdditionalReleaseControls(releaseTabPage);
             ConfigureGitTab(gitTabPage);
+        }
+
+        private void ConfigureAdditionalReleaseControls(TabPage releaseTabPage)
+        {
+            const int left = 26;
+            const int textLeft = 26;
+            const int buttonLeft = 475;
+            const int textWidth = 443;
+            const int buttonWidth = 142;
+            const int rowHeight = 51;
+            const int labelTop = 31;
+            const int textOffset = 18;
+            const int blazorRow = 3;
+            const int windowsFormsRow = 4;
+            const int printServerRow = 5;
+
+            _blazorLabel = new Label
+            {
+                AutoSize = true,
+                Location = new Point(left, labelTop + (rowHeight * blazorRow)),
+                Name = "labelBlazorWeb",
+                Text = "Blazor WebApp"
+            };
+
+            _blazorProjectTextBox = new TextBox
+            {
+                Location = new Point(textLeft, _blazorLabel.Top + textOffset),
+                Name = "textBoxBlazorWeb",
+                ReadOnly = true,
+                Size = new Size(textWidth, 23)
+            };
+
+            _blazorButton = new Button
+            {
+                Location = new Point(buttonLeft, _blazorProjectTextBox.Top),
+                Name = "buttonBlazorWeb",
+                Size = new Size(buttonWidth, 23),
+                Text = "Adicionar Blazor",
+                UseVisualStyleBackColor = true
+            };
+            _blazorButton.Click += (_, _) => AddProject(ReleaseKind.BlazorWeb, _blazorProjectTextBox!);
+
+            _windowsFormsLabel = new Label
+            {
+                AutoSize = true,
+                Location = new Point(left, labelTop + (rowHeight * windowsFormsRow)),
+                Name = "labelWindowsForms",
+                Text = "Windows Forms"
+            };
+
+            _windowsFormsProjectTextBox = new TextBox
+            {
+                Location = new Point(textLeft, _windowsFormsLabel.Top + textOffset),
+                Name = "textBoxWindowsForms",
+                ReadOnly = true,
+                Size = new Size(textWidth, 23)
+            };
+
+            _windowsFormsButton = new Button
+            {
+                Location = new Point(buttonLeft, _windowsFormsProjectTextBox.Top),
+                Name = "buttonWindowsForms",
+                Size = new Size(buttonWidth, 23),
+                Text = "Adicionar WinForms",
+                UseVisualStyleBackColor = true
+            };
+            _windowsFormsButton.Click += (_, _) => AddProject(ReleaseKind.WindowsForms, _windowsFormsProjectTextBox!);
+
+            label4.Location = new Point(left, labelTop + (rowHeight * printServerRow));
+            textBox8.Location = new Point(textLeft, label4.Top + textOffset);
+            button7.Location = new Point(buttonLeft, textBox8.Top);
+
+            listView1.Location = new Point(left, textBox8.Bottom + 8);
+            var totalHeight = Math.Max(128, button5.Top - listView1.Top - 6);
+            listView1.Size = new Size(591, totalHeight - 110);
+
+            _summaryLogTextBox = new TextBox
+            {
+                Location = new Point(left, listView1.Bottom + 8),
+                Size = new Size(591, 102),
+                Font = new Font("Consolas", 9F),
+                Multiline = true,
+                Name = "textBoxSummaryLog",
+                ReadOnly = true,
+                ScrollBars = ScrollBars.Both,
+                WordWrap = false,
+                BackColor = Color.Black,
+                ForeColor = Color.Lime
+            };
+            releaseTabPage.Controls.Add(_summaryLogTextBox);
+
+            releaseTabPage.Controls.Add(_blazorLabel);
+            releaseTabPage.Controls.Add(_blazorProjectTextBox);
+            releaseTabPage.Controls.Add(_blazorButton);
+            releaseTabPage.Controls.Add(_windowsFormsLabel);
+            releaseTabPage.Controls.Add(_windowsFormsProjectTextBox);
+            releaseTabPage.Controls.Add(_windowsFormsButton);
+
+            ConfigureReleaseLogPanel();
+        }
+
+        private void ConfigureReleaseLogPanel()
+        {
+            _blazorLogTextBox = new TextBox
+            {
+                Dock = DockStyle.Fill,
+                Font = new Font("Consolas", 9F),
+                Multiline = true,
+                Name = "textBoxBlazorLog",
+                ReadOnly = true,
+                ScrollBars = ScrollBars.Both,
+                WordWrap = false
+            };
+
+            _windowsFormsLogTextBox = new TextBox
+            {
+                Dock = DockStyle.Fill,
+                Font = new Font("Consolas", 9F),
+                Multiline = true,
+                Name = "textBoxWindowsFormsLog",
+                ReadOnly = true,
+                ScrollBars = ScrollBars.Both,
+                WordWrap = false
+            };
+
+            tableLayoutPanel1.SuspendLayout();
+            try
+            {
+                tableLayoutPanel1.RowCount = 6;
+                tableLayoutPanel1.RowStyles.Clear();
+                for (int i = 0; i < 6; i++)
+                {
+                    tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100f / 6f));
+                }
+
+                tableLayoutPanel1.Controls.Clear();
+                tableLayoutPanel1.Controls.Add(textBox4, 0, 0); // MAUI Android
+                tableLayoutPanel1.Controls.Add(textBox5, 0, 1); // MAUI Windows
+                tableLayoutPanel1.Controls.Add(textBox6, 0, 2); // API
+                tableLayoutPanel1.Controls.Add(_blazorLogTextBox, 0, 3); // Blazor WebApp
+                tableLayoutPanel1.Controls.Add(_windowsFormsLogTextBox, 0, 4); // Windows Forms
+                tableLayoutPanel1.Controls.Add(textBox7, 0, 5); // Print Server
+            }
+            finally
+            {
+                tableLayoutPanel1.ResumeLayout();
+            }
         }
 
         private void ConfigureGitTab(TabPage gitTabPage)
@@ -239,10 +399,68 @@ namespace EasyBuilderRelease
 
         private void ConfigureLogTextBoxes()
         {
-            textBox4.Text = "Log MAUI Android";
-            textBox5.Text = "Log MAUI Windows";
-            textBox6.Text = "Log API";
-            textBox7.Text = "Log Servidor Impressao / Resumo";
+            foreach (var textBox in GetReleaseLogTextBoxes())
+            {
+                StyleLogTextBox(textBox);
+            }
+
+            ResetLogTextBoxes();
+        }
+
+        private IEnumerable<TextBox> GetReleaseLogTextBoxes()
+        {
+            yield return textBox4;
+            yield return textBox5;
+            yield return textBox6;
+
+            if (_blazorLogTextBox is not null)
+            {
+                yield return _blazorLogTextBox;
+            }
+
+            if (_windowsFormsLogTextBox is not null)
+            {
+                yield return _windowsFormsLogTextBox;
+            }
+
+            yield return textBox7;
+        }
+
+        private static void StyleLogTextBox(TextBox textBox)
+        {
+            textBox.BackColor = Color.Black;
+            textBox.ForeColor = Color.Lime;
+            textBox.Font = new Font("Consolas", 9F);
+        }
+
+        private void ResetLogTextBoxes()
+        {
+            ResetLog(textBox4, "Log MAUI Android");
+            ResetLog(textBox5, "Log MAUI Windows");
+            ResetLog(textBox6, "Log API");
+
+            if (_blazorLogTextBox is not null)
+            {
+                ResetLog(_blazorLogTextBox, "Log Blazor WebApp");
+            }
+
+            if (_windowsFormsLogTextBox is not null)
+            {
+                ResetLog(_windowsFormsLogTextBox, "Log Windows Forms");
+            }
+
+            ResetLog(textBox7, "Log Servidor Impressao");
+
+            if (_summaryLogTextBox is not null)
+            {
+                ResetLog(_summaryLogTextBox, "Resumo (Concluidos)");
+            }
+        }
+
+        private static void ResetLog(TextBox textBox, string title)
+        {
+            textBox.Text = $"== {title} =={Environment.NewLine}";
+            textBox.SelectionStart = textBox.TextLength;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -475,6 +693,12 @@ namespace EasyBuilderRelease
                 case ReleaseKind.PrintServer:
                     textBox8.Clear();
                     break;
+                case ReleaseKind.BlazorWeb:
+                    _blazorProjectTextBox?.Clear();
+                    break;
+                case ReleaseKind.WindowsForms:
+                    _windowsFormsProjectTextBox?.Clear();
+                    break;
             }
 
             RefreshReleaseList();
@@ -539,6 +763,44 @@ namespace EasyBuilderRelease
             }
         }
 
+        private void LoadDefaultReleaseProjects()
+        {
+            var addedAny = false;
+            addedAny |= AddDefaultReleaseProject(ReleaseKind.BlazorWeb, DefaultBlazorProjectPath);
+            addedAny |= AddDefaultReleaseProject(ReleaseKind.WindowsForms, DefaultWindowsFormsProjectPath);
+
+            if (addedAny)
+            {
+                SaveLastReleaseItems();
+            }
+        }
+
+        private bool AddDefaultReleaseProject(ReleaseKind kind, string projectFile)
+        {
+            if (_releaseItems.Any(item => item.Kind == kind))
+            {
+                return false;
+            }
+
+            if (!File.Exists(projectFile))
+            {
+                AppendSummary($"{kind.DisplayName()}: caminho padrao nao encontrado: {projectFile}");
+                return false;
+            }
+
+            var validation = _releaseRunner.ValidateProject(kind, projectFile);
+            if (!validation.IsValid)
+            {
+                AppendSummary($"{kind.DisplayName()}: projeto padrao ignorado. {validation.Message}");
+                return false;
+            }
+
+            _releaseItems.Add(new ReleaseItem(kind, projectFile));
+            SetProjectTextBox(kind, projectFile);
+            AppendSummary($"{kind.DisplayName()}: projeto padrao carregado.");
+            return true;
+        }
+
         private void SaveLastReleaseItems(string? lastReleaseRoot = null)
         {
             if (!string.IsNullOrWhiteSpace(lastReleaseRoot))
@@ -586,6 +848,18 @@ namespace EasyBuilderRelease
                 case ReleaseKind.PrintServer:
                     textBox8.Text = value;
                     break;
+                case ReleaseKind.BlazorWeb:
+                    if (_blazorProjectTextBox is not null)
+                    {
+                        _blazorProjectTextBox.Text = value;
+                    }
+                    break;
+                case ReleaseKind.WindowsForms:
+                    if (_windowsFormsProjectTextBox is not null)
+                    {
+                        _windowsFormsProjectTextBox.Text = value;
+                    }
+                    break;
             }
         }
 
@@ -629,21 +903,27 @@ namespace EasyBuilderRelease
             ReleaseKind.MauiAndroid => line => AppendLog(textBox4, line),
             ReleaseKind.MauiWindows => line => AppendLog(textBox5, line),
             ReleaseKind.Api => line => AppendLog(textBox6, line),
+            ReleaseKind.BlazorWeb => line => AppendLog(_blazorLogTextBox ?? textBox6, line),
+            ReleaseKind.WindowsForms => line => AppendLog(_windowsFormsLogTextBox ?? textBox7, line),
             ReleaseKind.PrintServer => line => AppendLog(textBox7, line),
             _ => AppendSummary
         };
 
         private void ClearLogs()
         {
-            textBox4.Clear();
-            textBox5.Clear();
-            textBox6.Clear();
-            textBox7.Clear();
+            ResetLogTextBoxes();
         }
 
         private void AppendSummary(string line)
         {
-            AppendLog(textBox7, $"[{DateTime.Now:HH:mm:ss}] {line}");
+            if (_summaryLogTextBox is not null)
+            {
+                AppendLog(_summaryLogTextBox, $"[{DateTime.Now:HH:mm:ss}] {line}");
+            }
+            else
+            {
+                AppendLog(textBox7, $"[{DateTime.Now:HH:mm:ss}] {line}");
+            }
         }
 
         private void AppendLog(TextBox textBox, string line)
@@ -683,6 +963,14 @@ namespace EasyBuilderRelease
             button5.Enabled = enabled;
             button6.Enabled = enabled;
             button7.Enabled = enabled;
+            if (_blazorButton is not null)
+            {
+                _blazorButton.Enabled = enabled;
+            }
+            if (_windowsFormsButton is not null)
+            {
+                _windowsFormsButton.Enabled = enabled;
+            }
             listView1.Enabled = enabled;
             SetGitControlsEnabled(enabled);
         }
