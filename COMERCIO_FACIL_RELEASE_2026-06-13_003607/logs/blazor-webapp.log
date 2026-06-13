@@ -1,0 +1,7 @@
+[00:44:58] dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\EasyLoginBase.WebAppBlazor.csproj -c Release -f net9.0 -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-13_003607\05_BlazorWebApp --nologo --verbosity minimal /m
+[00:45:00]   Determinando os projetos a serem restaurados...
+[00:45:01]   Todos os projetos estÃ£o atualizados para restauraÃ§Ã£o.
+[00:45:02]   EasyLoginBase.Domain -> C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Domain\bin\Release\net9.0\EasyLoginBase.Domain.dll
+[00:45:02]   EasyLoginBase.Application -> C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Application\bin\Release\net9.0\EasyLoginBase.Application.dll
+[00:45:03]   EasyLoginBase.WebAppBlazor -> C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\bin\Release\net9.0\EasyLoginBase.WebAppBlazor.dll
+[00:45:03]   EasyLoginBase.WebAppBlazor -> C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-13_003607\05_BlazorWebApp\
