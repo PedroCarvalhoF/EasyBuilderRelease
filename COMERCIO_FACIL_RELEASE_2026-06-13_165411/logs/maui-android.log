@@ -1,0 +1,348 @@
+[16:54:11] dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj -c Release -f net9.0-android -p:AndroidPackageFormat=apk -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-13_165411\01_MauiAndroid --nologo --verbosity minimal /m
+[16:54:12]   Determinando os projetos a serem restaurados...
+[16:54:16]   Todos os projetos estÃ£o atualizados para restauraÃ§Ã£o.
+[16:54:25] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp.Services.Services\Services\Produto\Etiqueta\ListaImpressao\ListaValidadeImpressaoItemServices.cs(22,9): warning CS1587: O comentÃ¡rio XML nÃ£o estÃ¡ inserido em um elemento de linguagem vÃ¡lido [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp.Services.Services\EasyManagerApp.Services.Services.csproj::TargetFramework=net9.0-android]
+[16:54:25]   EasyManagerApp.Template -> C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp.Template\bin\Release\net9.0-android\EasyManagerApp.Template.dll
+[16:54:25]   EasyManagerApp.Services.Services -> C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp.Services.Services\bin\Release\net9.0-android\EasyManagerApp.Services.Services.dll
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Services\Impressao\PrinterDiscoveryServiceMaui.cs(12,23): warning CA1422: Este site de chamadas Ã© acessÃ­vel em: 'Android' 21.0 e posteriores. "BluetoothAdapter.DefaultAdapter" estÃ¡ obsoleto em: 'Android' 31.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1422) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\TaskAlarmReceiver.cs(90,48): warning CA1416: Este site de chamada pode ser acessado em: 'Android' 21.0 e posteriores. SÃ³ hÃ¡ suporte para 'PendingIntentFlags.Immutable' em: 'android' 23.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\TaskAlarmReceiver.cs(102,48): warning CA1416: Este site de chamada pode ser acessado em: 'Android' 21.0 e posteriores. SÃ³ hÃ¡ suporte para 'PendingIntentFlags.Immutable' em: 'android' 23.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\TaskAlarmReceiver.cs(49,19): warning CA1416: Este site de chamada pode ser acessado em: 'Android' 21.0 e posteriores. SÃ³ hÃ¡ suporte para 'Notification.Builder' em: 'android' 26.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\TaskAlarmReceiver.cs(46,52): warning CA1416: Este site de chamada pode ser acessado em: 'Android' 21.0 e posteriores. SÃ³ hÃ¡ suporte para 'PendingIntentFlags.Immutable' em: 'android' 23.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\TaskAlarmReceiver.cs(52,32): warning CA1422: Este site de chamadas Ã© acessÃ­vel em: 'Android' 21.0 e posteriores. "Notification.Builder.SetVibrate(long[]?)" estÃ¡ obsoleto em: 'Android' 26.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1422) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\TaskAlarmReceiver.cs(52,32): warning CA1422: Este site de chamadas Ã© acessÃ­vel em: 'Android' 21.0 e posteriores. "Notification.Builder.SetDefaults(NotificationDefaults)" estÃ¡ obsoleto em: 'Android' 26.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1422) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\TaskAlarmReceiver.cs(52,32): warning CA1422: Este site de chamadas Ã© acessÃ­vel em: 'Android' 21.0 e posteriores. "Notification.Builder.SetPriority(int)" estÃ¡ obsoleto em: 'Android' 26.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1422) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\TaskAlarmReceiver.cs(50,19): warning CA1422: Este site de chamadas Ã© acessÃ­vel em: 'Android' 21.0 e posteriores. "Notification.Builder" estÃ¡ obsoleto em: 'Android' 26.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1422) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\AndroidTaskAlarmScheduler.cs(22,65): warning CA1416: Este site de chamada pode ser acessado em: 'Android' 21.0 e posteriores. SÃ³ hÃ¡ suporte para 'AlarmManager.CanScheduleExactAlarms()' em: 'android' 31.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\AndroidTaskAlarmScheduler.cs(29,17): warning CA1416: Este site de chamada pode ser acessado em: 'Android' 21.0 e posteriores. SÃ³ hÃ¡ suporte para 'AlarmManager.SetExactAndAllowWhileIdle(AlarmType, long, PendingIntent)' em: 'android' 23.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\TaskAlarmReceiver.cs(134,13): warning CA1416: Este site de chamada pode ser acessado em: 'Android' 21.0 e posteriores. SÃ³ hÃ¡ suporte para 'NotificationChannel.LockscreenVisibility.set' em: 'android' 26.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\TaskAlarmReceiver.cs(134,13): warning CA1416: Este site de chamada pode ser acessado em: 'Android' 21.0 e posteriores. SÃ³ hÃ¡ suporte para 'NotificationChannel.LockscreenVisibility' em: 'android' 26.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\TaskAlarmReceiver.cs(133,13): warning CA1416: Este site de chamada pode ser acessado em: 'Android' 21.0 e posteriores. SÃ³ hÃ¡ suporte para 'NotificationChannel.Description.set' em: 'android' 26.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\TaskAlarmReceiver.cs(133,13): warning CA1416: Este site de chamada pode ser acessado em: 'Android' 21.0 e posteriores. SÃ³ hÃ¡ suporte para 'NotificationChannel.Description' em: 'android' 26.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\TaskAlarmReceiver.cs(131,13): warning CA1416: Este site de chamada pode ser acessado em: 'Android' 21.0 e posteriores. SÃ³ hÃ¡ suporte para 'NotificationImportance.Max' em: 'android' 24.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\TaskAlarmReceiver.cs(128,23): warning CA1416: Este site de chamada pode ser acessado em: 'Android' 21.0 e posteriores. SÃ³ hÃ¡ suporte para 'NotificationChannel' em: 'android' 26.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\TaskAlarmReceiver.cs(137,9): warning CA1416: Este site de chamada pode ser acessado em: 'Android' 21.0 e posteriores. SÃ³ hÃ¡ suporte para 'NotificationChannel.EnableVibration(bool)' em: 'android' 26.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\TaskAlarmReceiver.cs(123,13): warning CA1416: Este site de chamada pode ser acessado em: 'Android' 21.0 e posteriores. SÃ³ hÃ¡ suporte para 'NotificationManager.GetNotificationChannel(string?)' em: 'android' 26.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\TaskAlarmReceiver.cs(139,9): warning CA1416: Este site de chamada pode ser acessado em: 'Android' 21.0 e posteriores. SÃ³ hÃ¡ suporte para 'NotificationManager.CreateNotificationChannel(NotificationChannel)' em: 'android' 26.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:54:45] C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\Platforms\Android\Notifications\TaskAlarmReceiver.cs(138,9): warning CA1416: Este site de chamada pode ser acessado em: 'Android' 21.0 e posteriores. SÃ³ hÃ¡ suporte para 'NotificationChannel.SetVibrationPattern(long[]?)' em: 'android' 26.0 e posteriores. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[16:55:02]   EasyManagerApp -> C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\bin\Release\net9.0-android\EasyManagerApp.dll
+[16:55:06]   EasyManagerApp.Services.Services -> C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp.Services.Services\bin\Release\net9.0-android\EasyManagerApp.Services.Services.dll
+[16:55:06]   EasyManagerApp.Template -> C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp.Template\bin\Release\net9.0-android\EasyManagerApp.Template.dll
+[16:55:13]   Otimizar assemblies para tamanho pode alterar o comportamento do aplicativo. Certifique-se de testar apÃ³s a publicaÃ§Ã£o. Veja: https://aka.ms/dotnet-illink
+[16:55:13]   Otimizando montagens para tamanho. Esse processo pode demorar um pouco.
+[16:55:13]   Otimizar assemblies para tamanho pode alterar o comportamento do aplicativo. Certifique-se de testar apÃ³s a publicaÃ§Ã£o. Veja: https://aka.ms/dotnet-illink
+[16:55:13]   Otimizando montagens para tamanho. Esse processo pode demorar um pouco.
+[16:55:50]   [1/155] _Microsoft.Android.Resource.Designer.dll -> _Microsoft.Android.Resource.Designer.dll.so
+[16:55:56]   [1/155] _Microsoft.Android.Resource.Designer.dll -> _Microsoft.Android.Resource.Designer.dll.so
+[16:55:58]   [2/155] CommunityToolkit.Maui.dll -> CommunityToolkit.Maui.dll.so
+[16:56:02]   [3/155] EasyManagerApp.Template.dll -> EasyManagerApp.Template.dll.so
+[16:56:02]   [4/155] EasyManagerApp.Services.Services.dll -> EasyManagerApp.Services.Services.dll.so
+[16:56:02]   [5/155] CommunityToolkit.Maui.Core.dll -> CommunityToolkit.Maui.Core.dll.so
+[16:56:02]   [6/155] CommunityToolkit.Mvvm.dll -> CommunityToolkit.Mvvm.dll.so
+[16:56:02]   [7/155] Microsoft.AspNetCore.Http.Features.dll -> Microsoft.AspNetCore.Http.Features.dll.so
+[16:56:02]   [2/155] EasyManagerApp.Services.Services.dll -> EasyManagerApp.Services.Services.dll.so
+[16:56:02]   [8/155] Microsoft.Extensions.Configuration.dll -> Microsoft.Extensions.Configuration.dll.so
+[16:56:03]   [9/155] Microsoft.Extensions.Configuration.Abstractions.dll -> Microsoft.Extensions.Configuration.Abstractions.dll.so
+[16:56:03]   [10/155] CommunityToolkit.Maui.Camera.dll -> CommunityToolkit.Maui.Camera.dll.so
+[16:56:05]   [3/155] EasyManagerApp.Template.dll -> EasyManagerApp.Template.dll.so
+[16:56:13]   [11/155] Microsoft.Extensions.Configuration.Json.dll -> Microsoft.Extensions.Configuration.Json.dll.so
+[16:56:13]   [12/155] Microsoft.Extensions.Configuration.Binder.dll -> Microsoft.Extensions.Configuration.Binder.dll.so
+[16:56:14]   [13/155] Microsoft.Extensions.DependencyInjection.Abstractions.dll -> Microsoft.Extensions.DependencyInjection.Abstractions.dll.so
+[16:56:14]   [14/155] Microsoft.Extensions.DependencyInjection.dll -> Microsoft.Extensions.DependencyInjection.dll.so
+[16:56:14]   [15/155] Microsoft.Extensions.Http.dll -> Microsoft.Extensions.Http.dll.so
+[16:56:14]   [16/155] Microsoft.Extensions.Diagnostics.dll -> Microsoft.Extensions.Diagnostics.dll.so
+[16:56:14]   [17/155] Microsoft.Extensions.Diagnostics.Abstractions.dll -> Microsoft.Extensions.Diagnostics.Abstractions.dll.so
+[16:56:15]   [18/155] Microsoft.Extensions.Options.dll -> Microsoft.Extensions.Options.dll.so
+[16:56:17]   [19/155] Microsoft.Extensions.Logging.Abstractions.dll -> Microsoft.Extensions.Logging.Abstractions.dll.so
+[16:56:20]   [20/155] Microsoft.Extensions.Logging.dll -> Microsoft.Extensions.Logging.dll.so
+[16:56:21]   [21/155] Microsoft.IdentityModel.Abstractions.dll -> Microsoft.IdentityModel.Abstractions.dll.so
+[16:56:21]   [22/155] Microsoft.Extensions.Primitives.dll -> Microsoft.Extensions.Primitives.dll.so
+[16:56:21]   [23/155] Microsoft.IdentityModel.JsonWebTokens.dll -> Microsoft.IdentityModel.JsonWebTokens.dll.so
+[16:56:21]   [24/155] Microsoft.IdentityModel.Tokens.dll -> Microsoft.IdentityModel.Tokens.dll.so
+[16:56:21]   [25/155] Microsoft.Maui.Controls.Xaml.dll -> Microsoft.Maui.Controls.Xaml.dll.so
+[16:56:21]   [26/155] Microsoft.Maui.dll -> Microsoft.Maui.dll.so
+[16:56:21]   [27/155] Microsoft.IdentityModel.Logging.dll -> Microsoft.IdentityModel.Logging.dll.so
+[16:56:23]   [28/155] Microsoft.Maui.Controls.dll -> Microsoft.Maui.Controls.dll.so
+[16:56:26]   [29/155] Microsoft.Maui.Essentials.dll -> Microsoft.Maui.Essentials.dll.so
+[16:56:26]   [30/155] Microsoft.Win32.SystemEvents.dll -> Microsoft.Win32.SystemEvents.dll.so
+[16:56:26]   [31/155] Microsoft.Maui.Graphics.dll -> Microsoft.Maui.Graphics.dll.so
+[16:56:26]   [32/155] Plugin.LocalNotification.dll -> Plugin.LocalNotification.dll.so
+[16:56:26]   [33/155] Syncfusion.Maui.Toolkit.resources.dll -> Syncfusion.Maui.Toolkit.resources.dll.so
+[16:56:26]   [34/155] Plugin.Maui.OCR.dll -> Plugin.Maui.OCR.dll.so
+[16:56:26]   [35/155] System.Drawing.Common.dll -> System.Drawing.Common.dll.so
+[16:56:27]   [36/155] Syncfusion.Maui.Toolkit.dll -> Syncfusion.Maui.Toolkit.dll.so
+[16:56:30]   [37/155] System.Formats.Nrbf.dll -> System.Formats.Nrbf.dll.so
+[16:56:31]   [38/155] System.Private.Windows.GdiPlus.dll -> System.Private.Windows.GdiPlus.dll.so
+[16:56:31]   [39/155] System.IdentityModel.Tokens.Jwt.dll -> System.IdentityModel.Tokens.Jwt.dll.so
+[16:56:31]   [40/155] System.Private.Windows.Core.dll -> System.Private.Windows.Core.dll.so
+[16:56:31]   [41/155] Xamarin.AndroidX.AppCompat.dll -> Xamarin.AndroidX.AppCompat.dll.so
+[16:56:32]   [42/155] Xamarin.AndroidX.Camera.Camera2.dll -> Xamarin.AndroidX.Camera.Camera2.dll.so
+[16:56:32]   [43/155] Xamarin.AndroidX.Camera.Core.dll -> Xamarin.AndroidX.Camera.Core.dll.so
+[16:56:32]   [44/155] Xamarin.AndroidX.Activity.dll -> Xamarin.AndroidX.Activity.dll.so
+[16:56:32]   [45/155] Xamarin.AndroidX.Camera.Lifecycle.dll -> Xamarin.AndroidX.Camera.Lifecycle.dll.so
+[16:56:32]   [46/155] Xamarin.AndroidX.AppCompat.AppCompatResources.dll -> Xamarin.AndroidX.AppCompat.AppCompatResources.dll.so
+[16:56:34]   [47/155] Xamarin.AndroidX.CardView.dll -> Xamarin.AndroidX.CardView.dll.so
+[16:56:35]   [48/155] Xamarin.AndroidX.Camera.View.dll -> Xamarin.AndroidX.Camera.View.dll.so
+[16:56:35]   [49/155] Xamarin.AndroidX.Camera.Video.dll -> Xamarin.AndroidX.Camera.Video.dll.so
+[16:56:35]   [50/155] Xamarin.AndroidX.Core.dll -> Xamarin.AndroidX.Core.dll.so
+[16:56:35]   [51/155] Xamarin.AndroidX.CursorAdapter.dll -> Xamarin.AndroidX.CursorAdapter.dll.so
+[16:56:35]   [52/155] Xamarin.AndroidX.CustomView.dll -> Xamarin.AndroidX.CustomView.dll.so
+[16:56:35]   [53/155] Xamarin.AndroidX.DrawerLayout.dll -> Xamarin.AndroidX.DrawerLayout.dll.so
+[16:56:36]   [54/155] Xamarin.AndroidX.Fragment.dll -> Xamarin.AndroidX.Fragment.dll.so
+[16:56:36]   [55/155] Xamarin.AndroidX.Collection.Jvm.dll -> Xamarin.AndroidX.Collection.Jvm.dll.so
+[16:56:36]   [56/155] Xamarin.AndroidX.Lifecycle.Common.Jvm.dll -> Xamarin.AndroidX.Lifecycle.Common.Jvm.dll.so
+[16:56:36]   [57/155] Xamarin.AndroidX.Lifecycle.ViewModel.Android.dll -> Xamarin.AndroidX.Lifecycle.ViewModel.Android.dll.so
+[16:56:39]   [58/155] Xamarin.AndroidX.Lifecycle.ViewModelSavedState.dll -> Xamarin.AndroidX.Lifecycle.ViewModelSavedState.dll.so
+[16:56:39]   [59/155] Xamarin.AndroidX.CoordinatorLayout.dll -> Xamarin.AndroidX.CoordinatorLayout.dll.so
+[16:56:39]   [60/155] Xamarin.AndroidX.Lifecycle.LiveData.Core.dll -> Xamarin.AndroidX.Lifecycle.LiveData.Core.dll.so
+[16:56:39]   [61/155] Xamarin.AndroidX.Navigation.Common.dll -> Xamarin.AndroidX.Navigation.Common.dll.so
+[16:56:40]   [62/155] Xamarin.AndroidX.Loader.dll -> Xamarin.AndroidX.Loader.dll.so
+[16:56:40]   [63/155] Xamarin.AndroidX.Navigation.Fragment.dll -> Xamarin.AndroidX.Navigation.Fragment.dll.so
+[16:56:40]   [64/155] Xamarin.AndroidX.Navigation.UI.dll -> Xamarin.AndroidX.Navigation.UI.dll.so
+[16:56:40]   [65/155] Xamarin.AndroidX.Navigation.Runtime.dll -> Xamarin.AndroidX.Navigation.Runtime.dll.so
+[16:56:40]   [66/155] Xamarin.AndroidX.RecyclerView.dll -> Xamarin.AndroidX.RecyclerView.dll.so
+[16:56:40]   [67/155] Xamarin.AndroidX.SavedState.dll -> Xamarin.AndroidX.SavedState.dll.so
+[16:56:41]   [68/155] Xamarin.AndroidX.Security.SecurityCrypto.dll -> Xamarin.AndroidX.Security.SecurityCrypto.dll.so
+[16:56:44]   [69/155] Xamarin.AndroidX.SwipeRefreshLayout.dll -> Xamarin.AndroidX.SwipeRefreshLayout.dll.so
+[16:56:44]   [70/155] Xamarin.AndroidX.VersionedParcelable.dll -> Xamarin.AndroidX.VersionedParcelable.dll.so
+[16:56:44]   [71/155] Xamarin.Google.Android.Material.dll -> Xamarin.Google.Android.Material.dll.so
+[16:56:44]   [72/155] Xamarin.Google.Android.ODML.Image.dll -> Xamarin.Google.Android.ODML.Image.dll.so
+[16:56:45]   [73/155] Xamarin.Google.Crypto.Tink.Android.dll -> Xamarin.Google.Crypto.Tink.Android.dll.so
+[16:56:45]   [74/155] Xamarin.AndroidX.ViewPager.dll -> Xamarin.AndroidX.ViewPager.dll.so
+[16:56:45]   [75/155] Xamarin.AndroidX.ViewPager2.dll -> Xamarin.AndroidX.ViewPager2.dll.so
+[16:56:45]   [76/155] Xamarin.Google.MLKit.Common.dll -> Xamarin.Google.MLKit.Common.dll.so
+[16:56:45]   [77/155] Xamarin.Google.MLKit.Vision.Common.dll -> Xamarin.Google.MLKit.Vision.Common.dll.so
+[16:56:46]   [78/155] Xamarin.Google.Guava.ListenableFuture.dll -> Xamarin.Google.Guava.ListenableFuture.dll.so
+[16:56:49]   [79/155] Xamarin.Google.MLKit.Vision.Interfaces.dll -> Xamarin.Google.MLKit.Vision.Interfaces.dll.so
+[16:56:49]   [80/155] Xamarin.GooglePlayServices.Base.dll -> Xamarin.GooglePlayServices.Base.dll.so
+[16:56:50]   [81/155] Xamarin.GooglePlayServices.Basement.dll -> Xamarin.GooglePlayServices.Basement.dll.so
+[16:56:50]   [82/155] Xamarin.GooglePlayServices.MLKit.Text.Recognition.Common.dll -> Xamarin.GooglePlayServices.MLKit.Text.Recognition.Common.dll.so
+[16:56:50]   [83/155] Xamarin.GooglePlayServices.Location.dll -> Xamarin.GooglePlayServices.Location.dll.so
+[16:56:50]   [84/155] Xamarin.GooglePlayServices.MLKit.Text.Recognition.dll -> Xamarin.GooglePlayServices.MLKit.Text.Recognition.dll.so
+[16:56:50]   [85/155] Xamarin.Kotlin.StdLib.dll -> Xamarin.Kotlin.StdLib.dll.so
+[16:56:50]   [86/155] Xamarin.KotlinX.Coroutines.Core.Jvm.dll -> Xamarin.KotlinX.Coroutines.Core.Jvm.dll.so
+[16:56:50]   [87/155] Xamarin.GooglePlayServices.Tasks.dll -> Xamarin.GooglePlayServices.Tasks.dll.so
+[16:56:51]   [88/155] ZXing.Net.MAUI.dll -> ZXing.Net.MAUI.dll.so
+[16:56:51]   [89/155] Xamarin.KotlinX.Serialization.Core.Jvm.dll -> Xamarin.KotlinX.Serialization.Core.Jvm.dll.so
+[16:56:53]   [90/155] zxing.dll -> zxing.dll.so
+[16:56:53]   [91/155] ZXing.Net.MAUI.Controls.dll -> ZXing.Net.MAUI.Controls.dll.so
+[16:56:53]   [92/155] Microsoft.Win32.Primitives.dll -> Microsoft.Win32.Primitives.dll.so
+[16:56:54]   [93/155] System.Collections.Concurrent.dll -> System.Collections.Concurrent.dll.so
+[16:56:54]   [94/155] System.Collections.NonGeneric.dll -> System.Collections.NonGeneric.dll.so
+[16:56:54]   [95/155] System.Collections.Specialized.dll -> System.Collections.Specialized.dll.so
+[16:56:54]   [96/155] System.Collections.Immutable.dll -> System.Collections.Immutable.dll.so
+[16:56:54]   [97/155] System.ComponentModel.Annotations.dll -> System.ComponentModel.Annotations.dll.so
+[16:56:54]   [98/155] System.ComponentModel.Primitives.dll -> System.ComponentModel.Primitives.dll.so
+[16:56:55]   [99/155] System.Collections.dll -> System.Collections.dll.so
+[16:56:56]   [100/155] System.ComponentModel.TypeConverter.dll -> System.ComponentModel.TypeConverter.dll.so
+[16:56:58]   [101/155] System.Console.dll -> System.Console.dll.so
+[16:56:58]   [102/155] System.ComponentModel.dll -> System.ComponentModel.dll.so
+[16:56:58]   [103/155] System.Data.Common.dll -> System.Data.Common.dll.so
+[16:56:58]   [104/155] System.Diagnostics.TraceSource.dll -> System.Diagnostics.TraceSource.dll.so
+[16:56:58]   [105/155] System.Drawing.Primitives.dll -> System.Drawing.Primitives.dll.so
+[16:56:59]   [106/155] System.Diagnostics.DiagnosticSource.dll -> System.Diagnostics.DiagnosticSource.dll.so
+[16:56:59]   [107/155] System.Formats.Asn1.dll -> System.Formats.Asn1.dll.so
+[16:56:59]   [108/155] System.Drawing.dll -> System.Drawing.dll.so
+[16:56:59]   [109/155] System.IO.Compression.Brotli.dll -> System.IO.Compression.Brotli.dll.so
+[16:57:06]   [110/155] System.IO.Compression.dll -> System.IO.Compression.dll.so
+[16:57:06]   [111/155] System.IO.Pipelines.dll -> System.IO.Pipelines.dll.so
+[16:57:06]   [112/155] System.Linq.dll -> System.Linq.dll.so
+[16:57:06]   [113/155] System.Memory.dll -> System.Memory.dll.so
+[16:57:06]   [114/155] System.Linq.Expressions.dll -> System.Linq.Expressions.dll.so
+[16:57:06]   [115/155] System.Net.Http.Json.dll -> System.Net.Http.Json.dll.so
+[16:57:06]   [116/155] System.Net.NameResolution.dll -> System.Net.NameResolution.dll.so
+[16:57:06]   [117/155] System.Net.NetworkInformation.dll -> System.Net.NetworkInformation.dll.so
+[16:57:06]   [118/155] System.Net.Http.dll -> System.Net.Http.dll.so
+[16:57:06]   [119/155] System.Net.Requests.dll -> System.Net.Requests.dll.so
+[16:57:06]   [120/155] System.Net.Primitives.dll -> System.Net.Primitives.dll.so
+[16:57:06]   [121/155] System.Net.Security.dll -> System.Net.Security.dll.so
+[16:57:06]   [122/155] System.Net.WebSockets.dll -> System.Net.WebSockets.dll.so
+[16:57:06]   [123/155] System.Net.Sockets.dll -> System.Net.Sockets.dll.so
+[16:57:06]   [124/155] System.Numerics.Vectors.dll -> System.Numerics.Vectors.dll.so
+[16:57:06]   [125/155] System.ObjectModel.dll -> System.ObjectModel.dll.so
+[16:57:06]   [126/155] System.Private.Uri.dll -> System.Private.Uri.dll.so
+[16:57:06]   [127/155] System.Private.Xml.Linq.dll -> System.Private.Xml.Linq.dll.so
+[16:57:06]   [128/155] System.Private.Xml.dll -> System.Private.Xml.dll.so
+[16:57:06]   [129/155] System.Reflection.Metadata.dll -> System.Reflection.Metadata.dll.so
+[16:57:06]   [130/155] System.Runtime.InteropServices.dll -> System.Runtime.InteropServices.dll.so
+[16:57:06]   [131/155] System.Runtime.Numerics.dll -> System.Runtime.Numerics.dll.so
+[16:57:06]   [132/155] System.Runtime.Serialization.Formatters.dll -> System.Runtime.Serialization.Formatters.dll.so
+[16:57:06]   [133/155] System.Runtime.Loader.dll -> System.Runtime.Loader.dll.so
+[16:57:06]   [134/155] System.Runtime.dll -> System.Runtime.dll.so
+[16:57:06]   [135/155] System.Security.Claims.dll -> System.Security.Claims.dll.so
+[16:57:06]   [136/155] System.Security.Cryptography.X509Certificates.dll -> System.Security.Cryptography.X509Certificates.dll.so
+[16:57:06]   [137/155] System.Security.Cryptography.dll -> System.Security.Cryptography.dll.so
+[16:57:06]   [138/155] System.Text.Encoding.CodePages.dll -> System.Text.Encoding.CodePages.dll.so
+[16:57:06]   [139/155] System.Text.Encodings.Web.dll -> System.Text.Encodings.Web.dll.so
+[16:57:06]   [140/155] System.Threading.Channels.dll -> System.Threading.Channels.dll.so
+[16:57:06]   [141/155] System.Text.RegularExpressions.dll -> System.Text.RegularExpressions.dll.so
+[16:57:06]   [142/155] System.Text.Json.dll -> System.Text.Json.dll.so
+[16:57:06]   [143/155] System.Threading.Thread.dll -> System.Threading.Thread.dll.so
+[16:57:06]   [144/155] System.Threading.dll -> System.Threading.dll.so
+[16:57:06]   [145/155] System.Web.HttpUtility.dll -> System.Web.HttpUtility.dll.so
+[16:57:06]   [146/155] System.Xml.XDocument.dll -> System.Xml.XDocument.dll.so
+[16:57:06]   [147/155] System.Xml.Linq.dll -> System.Xml.Linq.dll.so
+[16:57:06]   [148/155] System.Xml.ReaderWriter.dll -> System.Xml.ReaderWriter.dll.so
+[16:57:06]   [149/155] System.dll -> System.dll.so
+[16:57:06]   [150/155] mscorlib.dll -> mscorlib.dll.so
+[16:57:06]   [151/155] Mono.Android.Runtime.dll -> Mono.Android.Runtime.dll.so
+[16:57:06]   [152/155] Java.Interop.dll -> Java.Interop.dll.so
+[16:57:06]   [153/155] Mono.Android.dll -> Mono.Android.dll.so
+[16:57:06]   [154/155] EasyManagerApp.dll -> EasyManagerApp.dll.so
+[16:57:07]   [155/155] System.Private.CoreLib.dll -> System.Private.CoreLib.dll.so
+[16:57:16]   [4/155] EasyManagerApp.dll -> EasyManagerApp.dll.so
+[16:57:17]   [5/155] CommunityToolkit.Maui.dll -> CommunityToolkit.Maui.dll.so
+[16:57:18]   [6/155] CommunityToolkit.Maui.Camera.dll -> CommunityToolkit.Maui.Camera.dll.so
+[16:57:18]   [7/155] CommunityToolkit.Maui.Core.dll -> CommunityToolkit.Maui.Core.dll.so
+[16:57:18]   [8/155] CommunityToolkit.Mvvm.dll -> CommunityToolkit.Mvvm.dll.so
+[16:57:19]   [9/155] Microsoft.AspNetCore.Http.Features.dll -> Microsoft.AspNetCore.Http.Features.dll.so
+[16:57:19]   [10/155] Microsoft.Extensions.Configuration.dll -> Microsoft.Extensions.Configuration.dll.so
+[16:57:19]   [11/155] Microsoft.Extensions.Configuration.Abstractions.dll -> Microsoft.Extensions.Configuration.Abstractions.dll.so
+[16:57:20]   [12/155] Microsoft.Extensions.Configuration.Binder.dll -> Microsoft.Extensions.Configuration.Binder.dll.so
+[16:57:20]   [13/155] Microsoft.Extensions.Configuration.Json.dll -> Microsoft.Extensions.Configuration.Json.dll.so
+[16:57:20]   [14/155] Microsoft.Extensions.DependencyInjection.dll -> Microsoft.Extensions.DependencyInjection.dll.so
+[16:57:21]   [15/155] Microsoft.Extensions.DependencyInjection.Abstractions.dll -> Microsoft.Extensions.DependencyInjection.Abstractions.dll.so
+[16:57:21]   [16/155] Microsoft.Extensions.Diagnostics.dll -> Microsoft.Extensions.Diagnostics.dll.so
+[16:57:21]   [17/155] Microsoft.Extensions.Diagnostics.Abstractions.dll -> Microsoft.Extensions.Diagnostics.Abstractions.dll.so
+[16:57:22]   [18/155] Microsoft.Extensions.Http.dll -> Microsoft.Extensions.Http.dll.so
+[16:57:22]   [19/155] Microsoft.Extensions.Logging.dll -> Microsoft.Extensions.Logging.dll.so
+[16:57:22]   [20/155] Microsoft.Extensions.Logging.Abstractions.dll -> Microsoft.Extensions.Logging.Abstractions.dll.so
+[16:57:23]   [21/155] Microsoft.Extensions.Options.dll -> Microsoft.Extensions.Options.dll.so
+[16:57:23]   [22/155] Microsoft.Extensions.Primitives.dll -> Microsoft.Extensions.Primitives.dll.so
+[16:57:23]   [23/155] Microsoft.IdentityModel.Abstractions.dll -> Microsoft.IdentityModel.Abstractions.dll.so
+[16:57:24]   [24/155] Microsoft.IdentityModel.JsonWebTokens.dll -> Microsoft.IdentityModel.JsonWebTokens.dll.so
+[16:57:24]   [25/155] Microsoft.IdentityModel.Logging.dll -> Microsoft.IdentityModel.Logging.dll.so
+[16:57:25]   [26/155] Microsoft.IdentityModel.Tokens.dll -> Microsoft.IdentityModel.Tokens.dll.so
+[16:57:29]   [27/155] Microsoft.Maui.Controls.dll -> Microsoft.Maui.Controls.dll.so
+[16:57:29]   [28/155] Microsoft.Maui.Controls.Xaml.dll -> Microsoft.Maui.Controls.Xaml.dll.so
+[16:57:31]   [29/155] Microsoft.Maui.dll -> Microsoft.Maui.dll.so
+[16:57:32]   [30/155] Microsoft.Maui.Essentials.dll -> Microsoft.Maui.Essentials.dll.so
+[16:57:32]   [31/155] Microsoft.Maui.Graphics.dll -> Microsoft.Maui.Graphics.dll.so
+[16:57:33]   [32/155] Microsoft.Win32.SystemEvents.dll -> Microsoft.Win32.SystemEvents.dll.so
+[16:57:33]   [33/155] Plugin.LocalNotification.dll -> Plugin.LocalNotification.dll.so
+[16:57:34]   [34/155] Plugin.Maui.OCR.dll -> Plugin.Maui.OCR.dll.so
+[16:57:35]   [35/155] Syncfusion.Maui.Toolkit.dll -> Syncfusion.Maui.Toolkit.dll.so
+[16:57:35]   [36/155] Syncfusion.Maui.Toolkit.resources.dll -> Syncfusion.Maui.Toolkit.resources.dll.so
+[16:57:36]   [37/155] System.Drawing.Common.dll -> System.Drawing.Common.dll.so
+[16:57:37]   [38/155] System.Private.Windows.Core.dll -> System.Private.Windows.Core.dll.so
+[16:57:37]   [39/155] System.Private.Windows.GdiPlus.dll -> System.Private.Windows.GdiPlus.dll.so
+[16:57:38]   [40/155] System.Formats.Nrbf.dll -> System.Formats.Nrbf.dll.so
+[16:57:38]   [41/155] System.IdentityModel.Tokens.Jwt.dll -> System.IdentityModel.Tokens.Jwt.dll.so
+[16:57:38]   [42/155] Xamarin.AndroidX.Activity.dll -> Xamarin.AndroidX.Activity.dll.so
+[16:57:39]   [43/155] Xamarin.AndroidX.AppCompat.dll -> Xamarin.AndroidX.AppCompat.dll.so
+[16:57:39]   [44/155] Xamarin.AndroidX.AppCompat.AppCompatResources.dll -> Xamarin.AndroidX.AppCompat.AppCompatResources.dll.so
+[16:57:39]   [45/155] Xamarin.AndroidX.Camera.Camera2.dll -> Xamarin.AndroidX.Camera.Camera2.dll.so
+[16:57:40]   [46/155] Xamarin.AndroidX.Camera.Core.dll -> Xamarin.AndroidX.Camera.Core.dll.so
+[16:57:40]   [47/155] Xamarin.AndroidX.Camera.Lifecycle.dll -> Xamarin.AndroidX.Camera.Lifecycle.dll.so
+[16:57:40]   [48/155] Xamarin.AndroidX.Camera.Video.dll -> Xamarin.AndroidX.Camera.Video.dll.so
+[16:57:41]   [49/155] Xamarin.AndroidX.Camera.View.dll -> Xamarin.AndroidX.Camera.View.dll.so
+[16:57:41]   [50/155] Xamarin.AndroidX.CardView.dll -> Xamarin.AndroidX.CardView.dll.so
+[16:57:41]   [51/155] Xamarin.AndroidX.Collection.Jvm.dll -> Xamarin.AndroidX.Collection.Jvm.dll.so
+[16:57:42]   [52/155] Xamarin.AndroidX.CoordinatorLayout.dll -> Xamarin.AndroidX.CoordinatorLayout.dll.so
+[16:57:42]   [53/155] Xamarin.AndroidX.Core.dll -> Xamarin.AndroidX.Core.dll.so
+[16:57:42]   [54/155] Xamarin.AndroidX.CursorAdapter.dll -> Xamarin.AndroidX.CursorAdapter.dll.so
+[16:57:43]   [55/155] Xamarin.AndroidX.CustomView.dll -> Xamarin.AndroidX.CustomView.dll.so
+[16:57:43]   [56/155] Xamarin.AndroidX.DrawerLayout.dll -> Xamarin.AndroidX.DrawerLayout.dll.so
+[16:57:43]   [57/155] Xamarin.AndroidX.Fragment.dll -> Xamarin.AndroidX.Fragment.dll.so
+[16:57:44]   [58/155] Xamarin.AndroidX.Lifecycle.Common.Jvm.dll -> Xamarin.AndroidX.Lifecycle.Common.Jvm.dll.so
+[16:57:44]   [59/155] Xamarin.AndroidX.Lifecycle.LiveData.Core.dll -> Xamarin.AndroidX.Lifecycle.LiveData.Core.dll.so
+[16:57:44]   [60/155] Xamarin.AndroidX.Lifecycle.ViewModel.Android.dll -> Xamarin.AndroidX.Lifecycle.ViewModel.Android.dll.so
+[16:57:45]   [61/155] Xamarin.AndroidX.Lifecycle.ViewModelSavedState.dll -> Xamarin.AndroidX.Lifecycle.ViewModelSavedState.dll.so
+[16:57:45]   [62/155] Xamarin.AndroidX.Loader.dll -> Xamarin.AndroidX.Loader.dll.so
+[16:57:45]   [63/155] Xamarin.AndroidX.Navigation.Common.dll -> Xamarin.AndroidX.Navigation.Common.dll.so
+[16:57:46]   [64/155] Xamarin.AndroidX.Navigation.Fragment.dll -> Xamarin.AndroidX.Navigation.Fragment.dll.so
+[16:57:46]   [65/155] Xamarin.AndroidX.Navigation.Runtime.dll -> Xamarin.AndroidX.Navigation.Runtime.dll.so
+[16:57:46]   [66/155] Xamarin.AndroidX.Navigation.UI.dll -> Xamarin.AndroidX.Navigation.UI.dll.so
+[16:57:47]   [67/155] Xamarin.AndroidX.RecyclerView.dll -> Xamarin.AndroidX.RecyclerView.dll.so
+[16:57:47]   [68/155] Xamarin.AndroidX.SavedState.dll -> Xamarin.AndroidX.SavedState.dll.so
+[16:57:47]   [69/155] Xamarin.AndroidX.Security.SecurityCrypto.dll -> Xamarin.AndroidX.Security.SecurityCrypto.dll.so
+[16:57:47]   [70/155] Xamarin.AndroidX.SwipeRefreshLayout.dll -> Xamarin.AndroidX.SwipeRefreshLayout.dll.so
+[16:57:48]   [71/155] Xamarin.AndroidX.VersionedParcelable.dll -> Xamarin.AndroidX.VersionedParcelable.dll.so
+[16:57:48]   [72/155] Xamarin.AndroidX.ViewPager.dll -> Xamarin.AndroidX.ViewPager.dll.so
+[16:57:48]   [73/155] Xamarin.AndroidX.ViewPager2.dll -> Xamarin.AndroidX.ViewPager2.dll.so
+[16:57:49]   [74/155] Xamarin.Google.Android.Material.dll -> Xamarin.Google.Android.Material.dll.so
+[16:57:49]   [75/155] Xamarin.Google.Android.ODML.Image.dll -> Xamarin.Google.Android.ODML.Image.dll.so
+[16:57:50]   [76/155] Xamarin.Google.Crypto.Tink.Android.dll -> Xamarin.Google.Crypto.Tink.Android.dll.so
+[16:57:50]   [77/155] Xamarin.Google.Guava.ListenableFuture.dll -> Xamarin.Google.Guava.ListenableFuture.dll.so
+[16:57:50]   [78/155] Xamarin.Google.MLKit.Common.dll -> Xamarin.Google.MLKit.Common.dll.so
+[16:57:50]   [79/155] Xamarin.Google.MLKit.Vision.Common.dll -> Xamarin.Google.MLKit.Vision.Common.dll.so
+[16:57:51]   [80/155] Xamarin.Google.MLKit.Vision.Interfaces.dll -> Xamarin.Google.MLKit.Vision.Interfaces.dll.so
+[16:57:51]   [81/155] Xamarin.GooglePlayServices.Base.dll -> Xamarin.GooglePlayServices.Base.dll.so
+[16:57:52]   [82/155] Xamarin.GooglePlayServices.Basement.dll -> Xamarin.GooglePlayServices.Basement.dll.so
+[16:57:52]   [83/155] Xamarin.GooglePlayServices.Location.dll -> Xamarin.GooglePlayServices.Location.dll.so
+[16:57:52]   [84/155] Xamarin.GooglePlayServices.MLKit.Text.Recognition.dll -> Xamarin.GooglePlayServices.MLKit.Text.Recognition.dll.so
+[16:57:53]   [85/155] Xamarin.GooglePlayServices.MLKit.Text.Recognition.Common.dll -> Xamarin.GooglePlayServices.MLKit.Text.Recognition.Common.dll.so
+[16:57:53]   [86/155] Xamarin.GooglePlayServices.Tasks.dll -> Xamarin.GooglePlayServices.Tasks.dll.so
+[16:57:53]   [87/155] Xamarin.Kotlin.StdLib.dll -> Xamarin.Kotlin.StdLib.dll.so
+[16:57:53]   [88/155] Xamarin.KotlinX.Coroutines.Core.Jvm.dll -> Xamarin.KotlinX.Coroutines.Core.Jvm.dll.so
+[16:57:54]   [89/155] Xamarin.KotlinX.Serialization.Core.Jvm.dll -> Xamarin.KotlinX.Serialization.Core.Jvm.dll.so
+[16:57:54]   [90/155] zxing.dll -> zxing.dll.so
+[16:57:55]   [91/155] ZXing.Net.MAUI.dll -> ZXing.Net.MAUI.dll.so
+[16:57:55]   [92/155] ZXing.Net.MAUI.Controls.dll -> ZXing.Net.MAUI.Controls.dll.so
+[16:57:55]   [93/155] Microsoft.Win32.Primitives.dll -> Microsoft.Win32.Primitives.dll.so
+[16:57:56]   [94/155] System.Collections.Concurrent.dll -> System.Collections.Concurrent.dll.so
+[16:57:56]   [95/155] System.Collections.Immutable.dll -> System.Collections.Immutable.dll.so
+[16:57:56]   [96/155] System.Collections.NonGeneric.dll -> System.Collections.NonGeneric.dll.so
+[16:57:57]   [97/155] System.Collections.Specialized.dll -> System.Collections.Specialized.dll.so
+[16:57:57]   [98/155] System.Collections.dll -> System.Collections.dll.so
+[16:57:57]   [99/155] System.ComponentModel.Annotations.dll -> System.ComponentModel.Annotations.dll.so
+[16:57:58]   [100/155] System.ComponentModel.Primitives.dll -> System.ComponentModel.Primitives.dll.so
+[16:57:58]   [101/155] System.ComponentModel.TypeConverter.dll -> System.ComponentModel.TypeConverter.dll.so
+[16:57:58]   [102/155] System.ComponentModel.dll -> System.ComponentModel.dll.so
+[16:57:58]   [103/155] System.Console.dll -> System.Console.dll.so
+[16:57:59]   [104/155] System.Data.Common.dll -> System.Data.Common.dll.so
+[16:57:59]   [105/155] System.Diagnostics.DiagnosticSource.dll -> System.Diagnostics.DiagnosticSource.dll.so
+[16:57:59]   [106/155] System.Diagnostics.TraceSource.dll -> System.Diagnostics.TraceSource.dll.so
+[16:58:00]   [107/155] System.Drawing.Primitives.dll -> System.Drawing.Primitives.dll.so
+[16:58:00]   [108/155] System.Drawing.dll -> System.Drawing.dll.so
+[16:58:00]   [109/155] System.Formats.Asn1.dll -> System.Formats.Asn1.dll.so
+[16:58:01]   [110/155] System.IO.Compression.Brotli.dll -> System.IO.Compression.Brotli.dll.so
+[16:58:01]   [111/155] System.IO.Compression.dll -> System.IO.Compression.dll.so
+[16:58:01]   [112/155] System.IO.Pipelines.dll -> System.IO.Pipelines.dll.so
+[16:58:02]   [113/155] System.Linq.Expressions.dll -> System.Linq.Expressions.dll.so
+[16:58:03]   [114/155] System.Linq.dll -> System.Linq.dll.so
+[16:58:03]   [115/155] System.Memory.dll -> System.Memory.dll.so
+[16:58:04]   [116/155] System.Net.Http.Json.dll -> System.Net.Http.Json.dll.so
+[16:58:05]   [117/155] System.Net.Http.dll -> System.Net.Http.dll.so
+[16:58:05]   [118/155] System.Net.NameResolution.dll -> System.Net.NameResolution.dll.so
+[16:58:05]   [119/155] System.Net.NetworkInformation.dll -> System.Net.NetworkInformation.dll.so
+[16:58:06]   [120/155] System.Net.Primitives.dll -> System.Net.Primitives.dll.so
+[16:58:06]   [121/155] System.Net.Requests.dll -> System.Net.Requests.dll.so
+[16:58:06]   [122/155] System.Net.Security.dll -> System.Net.Security.dll.so
+[16:58:07]   [123/155] System.Net.Sockets.dll -> System.Net.Sockets.dll.so
+[16:58:07]   [124/155] System.Net.WebSockets.dll -> System.Net.WebSockets.dll.so
+[16:58:07]   [125/155] System.Numerics.Vectors.dll -> System.Numerics.Vectors.dll.so
+[16:58:07]   [126/155] System.ObjectModel.dll -> System.ObjectModel.dll.so
+[16:58:08]   [127/155] System.Private.Uri.dll -> System.Private.Uri.dll.so
+[16:58:08]   [128/155] System.Private.Xml.Linq.dll -> System.Private.Xml.Linq.dll.so
+[16:58:09]   [129/155] System.Private.Xml.dll -> System.Private.Xml.dll.so
+[16:58:09]   [130/155] System.Reflection.Metadata.dll -> System.Reflection.Metadata.dll.so
+[16:58:09]   [131/155] System.Runtime.InteropServices.dll -> System.Runtime.InteropServices.dll.so
+[16:58:10]   [132/155] System.Runtime.Loader.dll -> System.Runtime.Loader.dll.so
+[16:58:10]   [133/155] System.Runtime.Numerics.dll -> System.Runtime.Numerics.dll.so
+[16:58:10]   [134/155] System.Runtime.Serialization.Formatters.dll -> System.Runtime.Serialization.Formatters.dll.so
+[16:58:10]   [135/155] System.Runtime.dll -> System.Runtime.dll.so
+[16:58:11]   [136/155] System.Security.Claims.dll -> System.Security.Claims.dll.so
+[16:58:11]   [137/155] System.Security.Cryptography.X509Certificates.dll -> System.Security.Cryptography.X509Certificates.dll.so
+[16:58:11]   [138/155] System.Security.Cryptography.dll -> System.Security.Cryptography.dll.so
+[16:58:12]   [139/155] System.Text.Encoding.CodePages.dll -> System.Text.Encoding.CodePages.dll.so
+[16:58:12]   [140/155] System.Text.Encodings.Web.dll -> System.Text.Encodings.Web.dll.so
+[16:58:13]   [141/155] System.Text.Json.dll -> System.Text.Json.dll.so
+[16:58:14]   [142/155] System.Text.RegularExpressions.dll -> System.Text.RegularExpressions.dll.so
+[16:58:14]   [143/155] System.Threading.Channels.dll -> System.Threading.Channels.dll.so
+[16:58:15]   [144/155] System.Threading.Thread.dll -> System.Threading.Thread.dll.so
+[16:58:15]   [145/155] System.Threading.dll -> System.Threading.dll.so
+[16:58:15]   [146/155] System.Web.HttpUtility.dll -> System.Web.HttpUtility.dll.so
+[16:58:15]   [147/155] System.Xml.Linq.dll -> System.Xml.Linq.dll.so
+[16:58:16]   [148/155] System.Xml.ReaderWriter.dll -> System.Xml.ReaderWriter.dll.so
+[16:58:16]   [149/155] System.Xml.XDocument.dll -> System.Xml.XDocument.dll.so
+[16:58:16]   [150/155] System.dll -> System.dll.so
+[16:58:16]   [151/155] mscorlib.dll -> mscorlib.dll.so
+[16:58:17]   [152/155] Java.Interop.dll -> Java.Interop.dll.so
+[16:58:17]   [153/155] Mono.Android.Runtime.dll -> Mono.Android.Runtime.dll.so
+[16:58:19]   [154/155] Mono.Android.dll -> Mono.Android.dll.so
+[16:58:23]   [155/155] System.Private.CoreLib.dll -> System.Private.CoreLib.dll.so
+[17:00:22] obj\Release\net9.0-android\lp\263\jl\jni\arm64-v8a\libmlkit_google_ocr_pipeline.so : warning XA4301: O APK jÃ¡ contÃ©m o item lib/arm64-v8a/libmlkit_google_ocr_pipeline.so. Ignorando. [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[17:00:22] obj\Release\net9.0-android\lp\263\jl\jni\x86_64\libmlkit_google_ocr_pipeline.so : warning XA4301: O APK jÃ¡ contÃ©m o item lib/x86_64/libmlkit_google_ocr_pipeline.so. Ignorando. [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[17:00:22] obj\Release\net9.0-android\lp\263\jl\jni\arm64-v8a\libmlkit_google_ocr_pipeline.so : warning XA4301: O APK jÃ¡ contÃ©m o item lib/arm64-v8a/libmlkit_google_ocr_pipeline.so. Ignorando. [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
+[17:00:22] obj\Release\net9.0-android\lp\263\jl\jni\x86_64\libmlkit_google_ocr_pipeline.so : warning XA4301: O APK jÃ¡ contÃ©m o item lib/x86_64/libmlkit_google_ocr_pipeline.so. Ignorando. [C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj::TargetFramework=net9.0-android]
