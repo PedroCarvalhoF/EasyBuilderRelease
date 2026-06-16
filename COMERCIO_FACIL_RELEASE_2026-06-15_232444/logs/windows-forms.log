@@ -1,0 +1,5 @@
+[23:33:02] dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyModuloPontoVendaDesktop\EasyModuloPontoVendaDesktop\EasyModuloPontoVendaDesktop.csproj -c Release -f net9.0-windows --runtime win-x64 --self-contained true -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-15_232444\06_WindowsForms --nologo --verbosity minimal /m
+[23:33:03]   Determinando os projetos a serem restaurados...
+[23:33:04]   C:\Users\PEDRO\Desktop\EasyPRO\EasyModuloPontoVendaDesktop\EasyModuloPontoVendaDesktop\EasyModuloPontoVendaDesktop.csproj restaurado (em 393 ms).
+[23:33:08]   EasyModuloPontoVendaDesktop -> C:\Users\PEDRO\Desktop\EasyPRO\EasyModuloPontoVendaDesktop\EasyModuloPontoVendaDesktop\bin\Release\net9.0-windows\win-x64\EasyModuloPontoVendaDesktop.dll
+[23:33:09]   EasyModuloPontoVendaDesktop -> C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-15_232444\06_WindowsForms\
