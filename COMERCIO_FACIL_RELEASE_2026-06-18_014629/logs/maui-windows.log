@@ -1,7 +1,0 @@
-[01:52:36] dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj -c Release -f net9.0-windows10.0.19041.0 -p:WindowsPackageType=None -p:RuntimeIdentifierOverride=win10-x64 -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-18_014629\02_MauiWindows --nologo --verbosity minimal /m
-[01:52:37]   Determinando os projetos a serem restaurados...
-[01:52:41]   Todos os projetos estÃ£o atualizados para restauraÃ§Ã£o.
-[01:52:51]   EasyManagerApp.Template -> C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp.Template\bin\Release\net9.0-windows10.0.19041.0\EasyManagerApp.Template.dll
-[01:52:53]   EasyManagerApp.Services.Services -> C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp.Services.Services\bin\Release\net9.0-windows10.0.19041.0\EasyManagerApp.Services.Services.dll
-[01:54:25]   EasyManagerApp -> C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\bin\Release\net9.0-windows10.0.19041.0\win10-x64\EasyManagerApp.dll
-[01:54:42]   EasyManagerApp -> C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-18_014629\02_MauiWindows\
