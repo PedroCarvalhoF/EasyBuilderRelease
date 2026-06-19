@@ -1,0 +1,222 @@
+[12:19:07] dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\EasyLoginBase.WebAppBlazor.csproj -c Release -f net9.0 -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp --nologo --verbosity normal /m
+[12:19:07] CompilaÃ§Ã£o de 19/06/2026 12:19:07 iniciada.
+[12:19:11]      1>Projeto "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\EasyLoginBase.WebAppBlazor.csproj" no nÃ³ 1 (Restore destino(s)).
+[12:19:11]      1>_GetAllRestoreProjectPathItems:
+[12:19:11]          Determinando os projetos a serem restaurados...
+[12:19:14]        Restore:
+[12:19:14]          A validaÃ§Ã£o da cadeia de certificados X.509 usarÃ¡ o repositÃ³rio de confianÃ§a padrÃ£o selecionado pelo .NET.
+[12:19:14]          A validaÃ§Ã£o da cadeia de certificados X.509 usarÃ¡ o repositÃ³rio de confianÃ§a padrÃ£o selecionado pelo .NET.
+[12:19:14]          O arquivo de ativos nÃ£o foi alterado. Ignorando gravaÃ§Ã£o de arquivo de ativos. Caminho: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Application\obj\project.assets.json
+[12:19:14]          O arquivo de ativos nÃ£o foi alterado. Ignorando gravaÃ§Ã£o de arquivo de ativos. Caminho: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Domain\obj\project.assets.json
+[12:19:14]          C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Domain\EasyLoginBase.Domain.csproj restaurado (em 241 ms).
+[12:19:14]          C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Application\EasyLoginBase.Application.csproj restaurado (em 237 ms).
+[12:19:14]          O arquivo de ativos nÃ£o foi alterado. Ignorando gravaÃ§Ã£o de arquivo de ativos. Caminho: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\project.assets.json
+[12:19:14]          C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\EasyLoginBase.WebAppBlazor.csproj restaurado (em 273 ms).
+[12:19:14]          
+[12:19:14]          Arquivos de configuraÃ§Ã£o NuGet usados:
+[12:19:14]              C:\Users\PEDRO\AppData\Roaming\NuGet\NuGet.Config
+[12:19:14]              C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.FallbackLocation.config
+[12:19:15]              C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+[12:19:15]          
+[12:19:15]          Feeds usados:
+[12:19:15]              https://api.nuget.org/v3/index.json
+[12:19:15]              C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+[12:19:15]              C:\Program Files\dotnet\library-packs
+[12:19:15]          Todos os projetos estÃ£o atualizados para restauraÃ§Ã£o.
+[12:19:15]      1>Projeto de compilaÃ§Ã£o pronto "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\EasyLoginBase.WebAppBlazor.csproj" (Restore destino(s)).
+[12:19:15] 
+[12:19:15] CompilaÃ§Ã£o com Ãªxito.
+[12:19:15]     0 Aviso(s)
+[12:19:15]     0 Erro(s)
+[12:19:15] 
+[12:19:15] Tempo Decorrido 00:00:07.15
+[12:19:15] CompilaÃ§Ã£o de 19/06/2026 12:19:15 iniciada.
+[12:19:25]      1>Projeto "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\EasyLoginBase.WebAppBlazor.csproj" no nÃ³ 1 (Publish destino(s)).
+[12:19:25]      1>O projeto "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\EasyLoginBase.WebAppBlazor.csproj" (1) estÃ¡ compilando "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Domain\EasyLoginBase.Domain.csproj" (3:2) no nÃ³ 2 (destinos padrÃ£o).
+[12:19:25]      3>GenerateTargetFrameworkMonikerAttribute:
+[12:19:25]        Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saÃ­da estÃ£o atualizados em relaÃ§Ã£o aos arquivos de entrada.
+[12:19:25]        CoreGenerateAssemblyInfo:
+[12:19:25]        Ignorando o destino "CoreGenerateAssemblyInfo" porque todos os arquivos de saÃ­da estÃ£o atualizados em relaÃ§Ã£o aos arquivos de entrada.
+[12:19:25]        _GenerateSourceLinkFile:
+[12:19:25]          O arquivo de link de origem 'obj\Release\net9.0\EasyLoginBase.Domain.sourcelink.json' estÃ¡ atualizado.
+[12:19:25]        CoreCompile:
+[12:19:25]        Ignorando o destino "CoreCompile" porque todos os arquivos de saÃ­da estÃ£o atualizados em relaÃ§Ã£o aos arquivos de entrada.
+[12:19:25]        GenerateBuildDependencyFile:
+[12:19:25]        Ignorando o destino "GenerateBuildDependencyFile" porque todos os arquivos de saÃ­da estÃ£o atualizados em relaÃ§Ã£o aos arquivos de entrada.
+[12:19:25]        CopyFilesToOutputDirectory:
+[12:19:25]          EasyLoginBase.Domain -> C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Domain\bin\Release\net9.0\EasyLoginBase.Domain.dll
+[12:19:25]      3>Projeto de compilaÃ§Ã£o pronto "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Domain\EasyLoginBase.Domain.csproj" (destinos padrÃ£o).
+[12:19:25]      1>O projeto "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\EasyLoginBase.WebAppBlazor.csproj" (1) estÃ¡ compilando "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Application\EasyLoginBase.Application.csproj" (2:2) no nÃ³ 1 (destinos padrÃ£o).
+[12:19:25]      2>GenerateTargetFrameworkMonikerAttribute:
+[12:19:25]        Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saÃ­da estÃ£o atualizados em relaÃ§Ã£o aos arquivos de entrada.
+[12:19:25]        CoreGenerateAssemblyInfo:
+[12:19:38]        Ignorando o destino "CoreGenerateAssemblyInfo" porque todos os arquivos de saÃ­da estÃ£o atualizados em relaÃ§Ã£o aos arquivos de entrada.
+[12:19:38]        _GenerateSourceLinkFile:
+[12:19:38]          O arquivo de link de origem 'obj\Release\net9.0\EasyLoginBase.Application.sourcelink.json' estÃ¡ atualizado.
+[12:19:38]        CoreCompile:
+[12:19:38]        Ignorando o destino "CoreCompile" porque todos os arquivos de saÃ­da estÃ£o atualizados em relaÃ§Ã£o aos arquivos de entrada.
+[12:19:38]        GenerateBuildDependencyFile:
+[12:19:38]        Ignorando o destino "GenerateBuildDependencyFile" porque todos os arquivos de saÃ­da estÃ£o atualizados em relaÃ§Ã£o aos arquivos de entrada.
+[12:19:38]        CopyFilesToOutputDirectory:
+[12:19:38]          EasyLoginBase.Application -> C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Application\bin\Release\net9.0\EasyLoginBase.Application.dll
+[12:19:38]      2>Projeto de compilaÃ§Ã£o pronto "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Application\EasyLoginBase.Application.csproj" (destinos padrÃ£o).
+[12:19:38]      1>GenerateTargetFrameworkMonikerAttribute:
+[12:19:38]        Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saÃ­da estÃ£o atualizados em relaÃ§Ã£o aos arquivos de entrada.
+[12:19:38]        CoreGenerateAssemblyInfo:
+[12:19:38]        Ignorando o destino "CoreGenerateAssemblyInfo" porque todos os arquivos de saÃ­da estÃ£o atualizados em relaÃ§Ã£o aos arquivos de entrada.
+[12:19:38]        _DiscoverMvcApplicationParts:
+[12:19:38]        Ignorando o destino "_DiscoverMvcApplicationParts" porque todos os arquivos de saÃ­da estÃ£o atualizados em relaÃ§Ã£o aos arquivos de entrada.
+[12:19:38]        _GenerateSourceLinkFile:
+[12:19:38]          O arquivo de link de origem 'obj\Release\net9.0\EasyLoginBase.WebAppBlazor.sourcelink.json' estÃ¡ atualizado.
+[12:19:38]        CoreCompile:
+[12:19:38]        Ignorando o destino "CoreCompile" porque todos os arquivos de saÃ­da estÃ£o atualizados em relaÃ§Ã£o aos arquivos de entrada.
+[12:19:38]        _CreateAppHost:
+[12:19:38]        Ignorando o destino "_CreateAppHost" porque todos os arquivos de saÃ­da estÃ£o atualizados em relaÃ§Ã£o aos arquivos de entrada.
+[12:19:38]        _ProcessScopedCssFiles:
+[12:19:38]        Ignorando o destino "_ProcessScopedCssFiles" porque ele nÃ£o tem saÃ­das.
+[12:19:38]        _ProcessScopedCssFiles:
+[12:19:38]        Ignorando o destino "_ProcessScopedCssFiles" porque ele nÃ£o tem saÃ­das.
+[12:19:38]        ResolveBuildCompressedStaticWebAssetsConfiguration:
+[12:19:38]          Accepted compressed asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\7uz06c5pdo-{0}-9i410i6h17-9i410i6h17.gz' for 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\js\app.js'.
+[12:19:38]          Accepted compressed asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\cui9dzjvso-{0}-5itg173035-5itg173035.gz' for 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\app.css'.
+[12:19:38]          Accepted compressed asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\y1ghqj3160-{0}-zpwntep3f7-zpwntep3f7.gz' for 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\animations.css'.
+[12:19:38]          Accepted compressed asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\azr19jxa4m-{0}-9f6wds051f-9f6wds051f.gz' for 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\layout.css'.
+[12:19:38]          Accepted compressed asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\ryeerzsn0v-{0}-nk0myxwefg-nk0myxwefg.gz' for 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\components.css'.
+[12:19:38]          Resolved 5 compressed assets for 5 candidate assets.
+[12:19:38]        ResolveBuildCompressedStaticWebAssets:
+[12:19:38]          Processing compressed asset: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\cui9dzjvso-{0}-5itg173035-5itg173035.gz
+[12:19:38]          Processing compressed asset: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\ryeerzsn0v-{0}-nk0myxwefg-nk0myxwefg.gz
+[12:19:38]          Processing compressed asset: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\y1ghqj3160-{0}-zpwntep3f7-zpwntep3f7.gz
+[12:19:38]          Processing compressed asset: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\7uz06c5pdo-{0}-9i410i6h17-9i410i6h17.gz
+[12:19:38]          Processing compressed asset: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\azr19jxa4m-{0}-9f6wds051f-9f6wds051f.gz
+[12:19:38]        _BuildCopyStaticWebAssetsPreserveNewest:
+[12:19:38]        Ignorando o destino "_BuildCopyStaticWebAssetsPreserveNewest" porque ele nÃ£o tem saÃ­das.
+[12:19:38]        _CopyOutOfDateSourceItemsToOutputDirectory:
+[12:19:38]        Ignorando o destino "_CopyOutOfDateSourceItemsToOutputDirectory" porque todos os arquivos de saÃ­da estÃ£o atualizados em relaÃ§Ã£o aos arquivos de entrada.
+[12:19:38]        GenerateBuildDependencyFile:
+[12:19:38]        Ignorando o destino "GenerateBuildDependencyFile" porque todos os arquivos de saÃ­da estÃ£o atualizados em relaÃ§Ã£o aos arquivos de entrada.
+[12:19:38]        GenerateBuildRuntimeConfigurationFiles:
+[12:19:38]        Ignorando o destino "GenerateBuildRuntimeConfigurationFiles" porque todos os arquivos de saÃ­da estÃ£o atualizados em relaÃ§Ã£o aos arquivos de entrada.
+[12:19:38]        CopyFilesToOutputDirectory:
+[12:19:38]          EasyLoginBase.WebAppBlazor -> C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\bin\Release\net9.0\EasyLoginBase.WebAppBlazor.dll
+[12:19:38]        ResolvePublishCompressedStaticWebAssetsConfiguration:
+[12:19:38]          The asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\7uz06c5pdo-{0}-9i410i6h17-9i410i6h17.gz' with related asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\js\app.js' was detected as already compressed with format 'gzip'.
+[12:19:38]          The asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\azr19jxa4m-{0}-9f6wds051f-9f6wds051f.gz' with related asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\layout.css' was detected as already compressed with format 'gzip'.
+[12:19:38]          The asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\cui9dzjvso-{0}-5itg173035-5itg173035.gz' with related asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\app.css' was detected as already compressed with format 'gzip'.
+[12:19:38]          The asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\ryeerzsn0v-{0}-nk0myxwefg-nk0myxwefg.gz' with related asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\components.css' was detected as already compressed with format 'gzip'.
+[12:19:38]          The asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\y1ghqj3160-{0}-zpwntep3f7-zpwntep3f7.gz' with related asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\animations.css' was detected as already compressed with format 'gzip'.
+[12:19:38]          Ignoring asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\animations.css' because it was already resolved with format 'gzip'.
+[12:19:38]          Accepted compressed asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\publish\y1ghqj3160-{0}-zpwntep3f7-zpwntep3f7.br' for 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\animations.css'.
+[12:19:38]          Ignoring asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\app.css' because it was already resolved with format 'gzip'.
+[12:19:38]          Accepted compressed asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\publish\cui9dzjvso-{0}-5itg173035-5itg173035.br' for 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\app.css'.
+[12:19:38]          Ignoring asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\components.css' because it was already resolved with format 'gzip'.
+[12:19:38]          Accepted compressed asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\publish\ryeerzsn0v-{0}-nk0myxwefg-nk0myxwefg.br' for 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\components.css'.
+[12:19:38]          Ignoring asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\layout.css' because it was already resolved with format 'gzip'.
+[12:19:38]          Accepted compressed asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\publish\azr19jxa4m-{0}-9f6wds051f-9f6wds051f.br' for 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\layout.css'.
+[12:19:38]          Ignoring asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\js\app.js' because it was already resolved with format 'gzip'.
+[12:19:38]          Accepted compressed asset 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\publish\7uz06c5pdo-{0}-9i410i6h17-9i410i6h17.br' for 'C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\js\app.js'.
+[12:19:38]          Resolved 5 compressed assets for 5 candidate assets.
+[12:19:38]        GeneratePublishCompressedStaticWebAssets:
+[12:19:38]          C:\Program Files\dotnet\dotnet.exe "C:\Program Files\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk.StaticWebAssets\targets\..\tools\net10.0\Microsoft.NET.Sdk.StaticWebAssets.Tool.dll" brotli
+[12:19:38]          
+[12:19:38]        ResolvePublishCompressedStaticWebAssets:
+[12:19:38]          Processing compressed asset: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\7uz06c5pdo-{0}-9i410i6h17-9i410i6h17.gz
+[12:19:38]          Processing compressed asset: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\azr19jxa4m-{0}-9f6wds051f-9f6wds051f.gz
+[12:19:38]          Processing compressed asset: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\cui9dzjvso-{0}-5itg173035-5itg173035.gz
+[12:19:38]          Processing compressed asset: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\ryeerzsn0v-{0}-nk0myxwefg-nk0myxwefg.gz
+[12:19:38]          Processing compressed asset: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\y1ghqj3160-{0}-zpwntep3f7-zpwntep3f7.gz
+[12:19:38]          Processing compressed asset: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\publish\y1ghqj3160-{0}-zpwntep3f7-zpwntep3f7.br
+[12:19:38]          Processing compressed asset: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\publish\cui9dzjvso-{0}-5itg173035-5itg173035.br
+[12:19:38]          Processing compressed asset: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\publish\ryeerzsn0v-{0}-nk0myxwefg-nk0myxwefg.br
+[12:19:38]          Processing compressed asset: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\publish\azr19jxa4m-{0}-9f6wds051f-9f6wds051f.br
+[12:19:38]          Processing compressed asset: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\publish\7uz06c5pdo-{0}-9i410i6h17-9i410i6h17.br
+[12:19:38]        _CopyResolvedFilesToPublishPreserveNewest:
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\web.config" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\web.config".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\EasyLoginBase.WebAppBlazor.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\EasyLoginBase.WebAppBlazor.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\appsettings.Development.json" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\appsettings.Development.json".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\appsettings.json" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\appsettings.json".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\bin\Release\net9.0\EasyLoginBase.WebAppBlazor.deps.json" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\EasyLoginBase.WebAppBlazor.deps.json".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\bin\Release\net9.0\EasyLoginBase.WebAppBlazor.runtimeconfig.json" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\EasyLoginBase.WebAppBlazor.runtimeconfig.json".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\EasyLoginBase.WebAppBlazor.pdb" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\EasyLoginBase.WebAppBlazor.pdb".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\fluentvalidation\11.11.0\lib\net8.0\FluentValidation.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\FluentValidation.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.aspnetcore.cryptography.internal\9.0.3\lib\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.AspNetCore.Cryptography.Internal.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.aspnetcore.cryptography.keyderivation\9.0.3\lib\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.extensions.caching.abstractions\9.0.3\lib\net9.0\Microsoft.Extensions.Caching.Abstractions.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.Extensions.Caching.Abstractions.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.extensions.configuration\10.0.0\lib\net9.0\Microsoft.Extensions.Configuration.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.Extensions.Configuration.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.extensions.configuration.abstractions\10.0.0\lib\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.Extensions.Configuration.Abstractions.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.extensions.configuration.binder\10.0.0\lib\net9.0\Microsoft.Extensions.Configuration.Binder.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.Extensions.Configuration.Binder.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\10.0.0\lib\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.Extensions.DependencyInjection.Abstractions.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.extensions.diagnostics.abstractions\10.0.0\lib\net9.0\Microsoft.Extensions.Diagnostics.Abstractions.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.Extensions.Diagnostics.Abstractions.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.extensions.dependencyinjection\10.0.0\lib\net9.0\Microsoft.Extensions.DependencyInjection.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.Extensions.DependencyInjection.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.extensions.fileproviders.abstractions\10.0.0\lib\net9.0\Microsoft.Extensions.FileProviders.Abstractions.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.Extensions.FileProviders.Abstractions.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.extensions.hosting.abstractions\10.0.0\lib\net9.0\Microsoft.Extensions.Hosting.Abstractions.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.Extensions.Hosting.Abstractions.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.extensions.identity.core\9.0.3\lib\net9.0\Microsoft.Extensions.Identity.Core.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.Extensions.Identity.Core.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.extensions.dependencymodel\10.0.0\lib\net9.0\Microsoft.Extensions.DependencyModel.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.Extensions.DependencyModel.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.extensions.identity.stores\9.0.3\lib\net9.0\Microsoft.Extensions.Identity.Stores.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.Extensions.Identity.Stores.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.extensions.logging\10.0.0\lib\net9.0\Microsoft.Extensions.Logging.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.Extensions.Logging.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.extensions.logging.abstractions\10.0.0\lib\net9.0\Microsoft.Extensions.Logging.Abstractions.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.Extensions.Logging.Abstractions.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.extensions.options\10.0.0\lib\net9.0\Microsoft.Extensions.Options.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.Extensions.Options.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.extensions.primitives\10.0.0\lib\net9.0\Microsoft.Extensions.Primitives.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.Extensions.Primitives.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\microsoft.openapi\1.6.23\lib\netstandard2.0\Microsoft.OpenApi.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Microsoft.OpenApi.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\serilog.aspnetcore\10.0.0\lib\net9.0\Serilog.AspNetCore.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Serilog.AspNetCore.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\serilog.extensions.hosting\10.0.0\lib\net9.0\Serilog.Extensions.Hosting.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Serilog.Extensions.Hosting.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\serilog.extensions.logging\10.0.0\lib\net9.0\Serilog.Extensions.Logging.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Serilog.Extensions.Logging.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\serilog\4.3.0\lib\net9.0\Serilog.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Serilog.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\serilog.formatting.compact\3.0.0\lib\net8.0\Serilog.Formatting.Compact.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Serilog.Formatting.Compact.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\serilog.settings.configuration\10.0.0\lib\net9.0\Serilog.Settings.Configuration.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Serilog.Settings.Configuration.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\serilog.sinks.console\6.1.1\lib\net8.0\Serilog.Sinks.Console.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Serilog.Sinks.Console.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\serilog.sinks.debug\3.0.0\lib\net8.0\Serilog.Sinks.Debug.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Serilog.Sinks.Debug.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\serilog.sinks.file\7.0.0\lib\net9.0\Serilog.Sinks.File.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Serilog.Sinks.File.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\swashbuckle.aspnetcore.swagger\8.0.0\lib\net9.0\Swashbuckle.AspNetCore.Swagger.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Swashbuckle.AspNetCore.Swagger.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\swashbuckle.aspnetcore.swaggergen\8.0.0\lib\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Swashbuckle.AspNetCore.SwaggerGen.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\swashbuckle.aspnetcore.swaggerui\8.0.0\lib\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\Swashbuckle.AspNetCore.SwaggerUI.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\system.diagnostics.diagnosticsource\10.0.0\lib\net9.0\System.Diagnostics.DiagnosticSource.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\System.Diagnostics.DiagnosticSource.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\system.io.pipelines\10.0.0\lib\net9.0\System.IO.Pipelines.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\System.IO.Pipelines.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\system.text.encodings.web\10.0.0\lib\net9.0\System.Text.Encodings.Web.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\System.Text.Encodings.Web.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\system.text.json\10.0.0\lib\net9.0\System.Text.Json.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\System.Text.Json.dll".
+[12:19:38]          Criando o diretÃ³rio "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\runtimes\browser\lib\net8.0".
+[12:19:38]          Criando o diretÃ³rio "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\runtimes\win\lib\net9.0".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Application\bin\Release\net9.0\EasyLoginBase.Application.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\EasyLoginBase.Application.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Domain\bin\Release\net9.0\EasyLoginBase.Domain.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\EasyLoginBase.Domain.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\system.text.encodings.web\10.0.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Application\bin\Release\net9.0\EasyLoginBase.Application.pdb" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\EasyLoginBase.Application.pdb".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\.nuget\packages\system.text.encodings.web\10.0.0\runtimes\win\lib\net9.0\System.Text.Encodings.Web.dll" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\runtimes\win\lib\net9.0\System.Text.Encodings.Web.dll".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.Domain\bin\Release\net9.0\EasyLoginBase.Domain.pdb" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\EasyLoginBase.Domain.pdb".
+[12:19:38]        _CopyResolvedFilesToPublishAlways:
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\apphost.exe" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\EasyLoginBase.WebAppBlazor.exe".
+[12:19:38]        _PublishCopyStaticWebAssetsPreserveNewest:
+[12:19:38]          Criando o diretÃ³rio "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\js".
+[12:19:38]          Criando o diretÃ³rio "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\js".
+[12:19:38]          Criando o diretÃ³rio "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\css".
+[12:19:38]          Criando o diretÃ³rio "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\css".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\publish\7uz06c5pdo-{0}-9i410i6h17-9i410i6h17.br" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\js\app.js.br".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\cui9dzjvso-{0}-5itg173035-5itg173035.gz" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\css\app.css.gz".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\7uz06c5pdo-{0}-9i410i6h17-9i410i6h17.gz" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\js\app.js.gz".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\azr19jxa4m-{0}-9f6wds051f-9f6wds051f.gz" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\css\layout.css.gz".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\publish\azr19jxa4m-{0}-9f6wds051f-9f6wds051f.br" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\css\layout.css.br".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\publish\cui9dzjvso-{0}-5itg173035-5itg173035.br" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\css\app.css.br".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\publish\ryeerzsn0v-{0}-nk0myxwefg-nk0myxwefg.br" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\css\components.css.br".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\publish\y1ghqj3160-{0}-zpwntep3f7-zpwntep3f7.br" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\css\animations.css.br".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\ryeerzsn0v-{0}-nk0myxwefg-nk0myxwefg.gz" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\css\components.css.gz".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\compressed\y1ghqj3160-{0}-zpwntep3f7-zpwntep3f7.gz" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\css\animations.css.gz".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\app.css" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\css\app.css".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\components.css" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\css\components.css".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\layout.css" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\css\layout.css".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\favicon.png" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\favicon.png".
+[12:19:38]          Criando o diretÃ³rio "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\images".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\images\logo.png" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\images\logo.png".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\js\app.js" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\js\app.js".
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\wwwroot\css\animations.css" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\wwwroot\css\animations.css".
+[12:19:38]        CopyStaticWebAssetsEndpointsManifest:
+[12:19:38]          Copiando o arquivo de "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\obj\Release\net9.0\staticwebassets.publish.endpoints.json" para "C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\EasyLoginBase.WebAppBlazor.staticwebassets.endpoints.json".
+[12:19:38]        Publish:
+[12:19:38]          EasyLoginBase.WebAppBlazor -> C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\
+[12:19:38]        _TransformWebConfig:
+[12:19:38]          Updating web.config at 'C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-19_121736\05_BlazorWebApp\web.config'
+[12:19:38]      1>Projeto de compilaÃ§Ã£o pronto "C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\EasyLoginBase.WebAppBlazor.csproj" (Publish destino(s)).
+[12:19:38] 
+[12:19:38] CompilaÃ§Ã£o com Ãªxito.
+[12:19:38]     0 Aviso(s)
+[12:19:38]     0 Erro(s)
+[12:19:38] 
+[12:19:38] Tempo Decorrido 00:00:23.02
