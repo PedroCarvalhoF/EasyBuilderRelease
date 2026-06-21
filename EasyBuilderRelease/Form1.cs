@@ -101,7 +101,8 @@ namespace EasyBuilderRelease
             const int textOffset = 18;
             const int blazorRow = 3;
             const int windowsFormsRow = 4;
-            const int printServerRow = 5;
+
+            releaseTabPage.AutoScroll = true;
 
             _blazorLabel = new Label
             {
@@ -155,17 +156,9 @@ namespace EasyBuilderRelease
             };
             _windowsFormsButton.Click += (_, _) => AddProject(ReleaseKind.WindowsForms, _windowsFormsProjectTextBox!);
 
-            label4.Location = new Point(left, labelTop + (rowHeight * printServerRow));
-            textBox8.Location = new Point(textLeft, label4.Top + textOffset);
-            button7.Location = new Point(buttonLeft, textBox8.Top);
-
-            listView1.Location = new Point(left, textBox8.Bottom + 8);
-            var totalHeight = Math.Max(128, button5.Top - listView1.Top - 6);
-            listView1.Size = new Size(591, totalHeight - 110);
-
             _summaryLogTextBox = new TextBox
             {
-                Location = new Point(left, listView1.Bottom + 8),
+                Location = new Point(left, 430),
                 Size = new Size(591, 102),
                 Font = new Font("Consolas", 9F),
                 Multiline = true,
@@ -186,6 +179,88 @@ namespace EasyBuilderRelease
             releaseTabPage.Controls.Add(_windowsFormsButton);
 
             ConfigureReleaseLogPanel();
+            releaseTabPage.Resize += (_, _) => LayoutReleaseTab(releaseTabPage);
+            LayoutReleaseTab(releaseTabPage);
+        }
+
+        private void LayoutReleaseTab(TabPage releaseTabPage)
+        {
+            if (_blazorLabel is null
+                || _blazorProjectTextBox is null
+                || _blazorButton is null
+                || _windowsFormsLabel is null
+                || _windowsFormsProjectTextBox is null
+                || _windowsFormsButton is null
+                || _summaryLogTextBox is null)
+            {
+                return;
+            }
+
+            const int margin = 18;
+            const int gap = 10;
+            const int rowHeight = 48;
+            const int labelToInput = 18;
+            const int inputHeight = 23;
+            const int actionHeight = 25;
+            const int summaryHeight = 104;
+            const int minListHeight = 120;
+            const int minLogWidth = 430;
+            const int leftWidth = 600;
+            const int projectButtonWidth = 145;
+
+            var viewWidth = Math.Max(releaseTabPage.ClientSize.Width, 1080);
+            var viewHeight = Math.Max(releaseTabPage.ClientSize.Height, 640);
+            var contentWidth = Math.Max(viewWidth, margin + leftWidth + gap + minLogWidth + margin);
+            var textWidth = leftWidth - projectButtonWidth - gap;
+            var buttonLeft = margin + textWidth + gap;
+            var rowTop = margin;
+
+            var rows = new (Label Label, TextBox TextBox, Button Button)[]
+            {
+                (label1, textBox1, button1),
+                (label2, textBox2, button3),
+                (label3, textBox3, button4),
+                (_blazorLabel, _blazorProjectTextBox, _blazorButton),
+                (_windowsFormsLabel, _windowsFormsProjectTextBox, _windowsFormsButton),
+                (label4, textBox8, button7)
+            };
+
+            foreach (var (label, textBox, button) in rows)
+            {
+                label.Location = new Point(margin, rowTop);
+                textBox.SetBounds(margin, rowTop + labelToInput, textWidth, inputHeight);
+                button.SetBounds(buttonLeft, textBox.Top, projectButtonWidth, inputHeight);
+                rowTop += rowHeight;
+            }
+
+            var listTop = rowTop + gap;
+            var minimumContentHeight = listTop
+                + minListHeight
+                + gap
+                + actionHeight
+                + gap
+                + actionHeight
+                + gap
+                + summaryHeight
+                + margin;
+            var contentHeight = Math.Max(viewHeight, minimumContentHeight);
+            var summaryTop = contentHeight - margin - summaryHeight;
+            var releaseButtonsTop = summaryTop - gap - actionHeight;
+            var removeButtonTop = releaseButtonsTop - gap - actionHeight;
+            var listHeight = Math.Max(minListHeight, removeButtonTop - gap - listTop);
+
+            listView1.SetBounds(margin, listTop, leftWidth, listHeight);
+            button5.SetBounds(margin, removeButtonTop, leftWidth, actionHeight);
+
+            var releaseButtonWidth = (leftWidth - gap) / 2;
+            button6.SetBounds(margin, releaseButtonsTop, releaseButtonWidth, actionHeight);
+            button2.SetBounds(margin + releaseButtonWidth + gap, releaseButtonsTop, releaseButtonWidth, actionHeight);
+            _summaryLogTextBox.SetBounds(margin, summaryTop, leftWidth, summaryHeight);
+
+            var logsLeft = margin + leftWidth + gap;
+            var logsWidth = Math.Max(minLogWidth, contentWidth - logsLeft - margin);
+            tableLayoutPanel1.SetBounds(logsLeft, margin, logsWidth, contentHeight - (margin * 2));
+            releaseTabPage.AutoScrollMinSize = new Size(contentWidth, contentHeight);
         }
 
         private void ConfigureReleaseLogPanel()
@@ -547,21 +622,7 @@ namespace EasyBuilderRelease
             var results = new List<ReleaseRunResult>();
             try
             {
-                if (runParallel)
-                {
-                    var tasks = _releaseItems
-                        .Select(item => Task.Run(() => RunReleaseItemAsync(item, logsDirectory)))
-                        .ToArray();
-
-                    results.AddRange(await Task.WhenAll(tasks));
-                }
-                else
-                {
-                    foreach (var item in _releaseItems)
-                    {
-                        results.Add(await RunReleaseItemAsync(item, logsDirectory));
-                    }
-                }
+                results.AddRange(await RunReleaseItemsAsync(runParallel, logsDirectory));
             }
             finally
             {
@@ -581,6 +642,131 @@ namespace EasyBuilderRelease
             {
                 AppendSummary("Release finalizado com falhas. Commit nao executado.");
             }
+
+            OpenReleaseFolder(releaseRoot);
+        }
+
+        private async Task<IReadOnlyCollection<ReleaseRunResult>> RunReleaseItemsAsync(bool runParallel, string logsDirectory)
+        {
+            return runParallel
+                ? await RunReleaseItemsInParallelAsync(logsDirectory)
+                : await RunReleaseItemsInQueueAsync(logsDirectory);
+        }
+
+        private async Task<IReadOnlyCollection<ReleaseRunResult>> RunReleaseItemsInParallelAsync(string logsDirectory)
+        {
+            var independentItems = _releaseItems
+                .Where(item => item.Kind != ReleaseKind.BlazorWeb)
+                .ToList();
+
+            var blazorItems = _releaseItems
+                .Where(item => item.Kind == ReleaseKind.BlazorWeb)
+                .ToList();
+
+            var independentTasks = independentItems
+                .Select(item => new
+                {
+                    Item = item,
+                    Task = Task.Run(() => RunReleaseItemAsync(item, logsDirectory))
+                })
+                .ToList();
+
+            var apiTask = independentTasks
+                .FirstOrDefault(task => task.Item.Kind == ReleaseKind.Api)
+                ?.Task;
+
+            var blazorTasks = blazorItems
+                .Select(item => RunBlazorReleaseAfterApiAsync(item, apiTask, logsDirectory))
+                .ToList();
+
+            var allTasks = independentTasks
+                .Select(task => task.Task)
+                .Concat(blazorTasks)
+                .ToArray();
+
+            return await Task.WhenAll(allTasks);
+        }
+
+        private async Task<IReadOnlyCollection<ReleaseRunResult>> RunReleaseItemsInQueueAsync(string logsDirectory)
+        {
+            var results = new List<ReleaseRunResult>();
+            ReleaseRunResult? apiResult = null;
+
+            foreach (var item in OrderReleaseItemsForDependencies())
+            {
+                if (item.Kind == ReleaseKind.BlazorWeb)
+                {
+                    if (apiResult is null)
+                    {
+                        results.Add(CreateBlockedReleaseResult(
+                            item,
+                            logsDirectory,
+                            "Release da API precisa estar na lista e concluir antes do Blazor."));
+                        continue;
+                    }
+
+                    if (!apiResult.Succeeded)
+                    {
+                        results.Add(CreateBlockedReleaseResult(
+                            item,
+                            logsDirectory,
+                            "Release da API falhou; Blazor nao sera publicado."));
+                        continue;
+                    }
+
+                    AppendSummary("Blazor WebApp: API concluida; iniciando publish.");
+                }
+
+                var result = await RunReleaseItemAsync(item, logsDirectory);
+                if (item.Kind == ReleaseKind.Api)
+                {
+                    apiResult = result;
+                }
+
+                results.Add(result);
+            }
+
+            return results;
+        }
+
+        private async Task<ReleaseRunResult> RunBlazorReleaseAfterApiAsync(
+            ReleaseItem item,
+            Task<ReleaseRunResult>? apiTask,
+            string logsDirectory)
+        {
+            if (apiTask is null)
+            {
+                return CreateBlockedReleaseResult(
+                    item,
+                    logsDirectory,
+                    "Release da API precisa estar na lista e concluir antes do Blazor.");
+            }
+
+            AppendSummary("Blazor WebApp: aguardando API concluir.");
+            var apiResult = await apiTask;
+            if (!apiResult.Succeeded)
+            {
+                return CreateBlockedReleaseResult(
+                    item,
+                    logsDirectory,
+                    "Release da API falhou; Blazor nao sera publicado.");
+            }
+
+            AppendSummary("Blazor WebApp: API concluida; iniciando publish.");
+            return await RunReleaseItemAsync(item, logsDirectory);
+        }
+
+        private IEnumerable<ReleaseItem> OrderReleaseItemsForDependencies()
+        {
+            foreach (var item in _releaseItems.Where(item => item.Kind != ReleaseKind.BlazorWeb))
+            {
+                yield return item;
+            }
+
+            foreach (var item in _releaseItems.Where(item => item.Kind == ReleaseKind.BlazorWeb))
+            {
+                yield return item;
+            }
         }
 
         private async Task<ReleaseRunResult> RunReleaseItemAsync(ReleaseItem item, string logsDirectory)
@@ -593,6 +779,43 @@ namespace EasyBuilderRelease
                 AppendSummary);
             UpdateItemStatus(item, result.Succeeded ? "Concluido" : "Falhou");
             return result;
+        }
+
+        private ReleaseRunResult CreateBlockedReleaseResult(
+            ReleaseItem item,
+            string logsDirectory,
+            string reason)
+        {
+            Directory.CreateDirectory(logsDirectory);
+
+            var logFile = Path.Combine(logsDirectory, item.Kind.LogFileName());
+            var commandText = item.CommandText;
+            var lines = new[]
+            {
+                $"[{DateTime.Now:HH:mm:ss}] {commandText}",
+                $"[{DateTime.Now:HH:mm:ss}] BLOQUEADO: {reason}"
+            };
+
+            File.WriteAllLines(logFile, lines, new UTF8Encoding(false));
+
+            var writeItemLog = GetLogWriter(item.Kind);
+            foreach (var line in lines)
+            {
+                writeItemLog(line);
+            }
+
+            item.ExitCode = -1;
+            UpdateItemStatus(item, "Bloqueado");
+            AppendSummary($"{item.Kind.DisplayName()}: bloqueado. {reason}");
+
+            return new ReleaseRunResult
+            {
+                Item = item,
+                LogFile = logFile,
+                CommandText = commandText,
+                ExitCode = -1,
+                Succeeded = false
+            };
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -1480,10 +1703,34 @@ namespace EasyBuilderRelease
                 builder.AppendLine($"  Log: {result.LogFile}");
                 builder.AppendLine($"  Comando: {result.CommandText}");
                 builder.AppendLine($"  ExitCode: {result.ExitCode}");
-                builder.AppendLine($"  Status: {(result.Succeeded ? "Concluido" : "Falhou")}");
+                builder.AppendLine($"  Status: {result.Item.Status}");
             }
 
             File.WriteAllText(manifest, builder.ToString(), new UTF8Encoding(false));
+        }
+
+        private void OpenReleaseFolder(string releaseRoot)
+        {
+            try
+            {
+                if (!Directory.Exists(releaseRoot))
+                {
+                    AppendSummary($"Pasta de release nao encontrada para abrir: {releaseRoot}");
+                    return;
+                }
+
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = releaseRoot,
+                    UseShellExecute = true
+                });
+
+                AppendSummary($"Pasta aberta: {releaseRoot}");
+            }
+            catch (Exception ex)
+            {
+                AppendSummary($"Nao foi possivel abrir a pasta do release: {ex.Message}");
+            }
         }
 
         private async Task CommitReleaseAsync(string releaseRoot)

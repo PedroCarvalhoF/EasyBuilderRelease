@@ -100,7 +100,7 @@ internal static class ReleaseKindExtensions
         args.Add(outputDirectory);
         args.Add("--nologo");
         args.Add("--verbosity");
-        args.Add("minimal");
+        args.Add("normal");
         args.Add("/m");
         return args;
     }
