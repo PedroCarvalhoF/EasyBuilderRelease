@@ -1,0 +1,47 @@
+COMERCIO FACIL - RELEASE
+Gerado em: 2026-06-20 21:38:17
+Pasta: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915
+
+Itens:
+- MAUI Android
+  Projeto: C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj
+  Saida: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915\01_MauiAndroid
+  Log: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915\logs\maui-android.log
+  Comando: dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj -c Release -f net9.0-android -p:AndroidPackageFormat=apk -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915\01_MauiAndroid --nologo --verbosity normal /m
+  ExitCode: 0
+  Status: Concluido
+- MAUI Windows
+  Projeto: C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj
+  Saida: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915\02_MauiWindows
+  Log: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915\logs\maui-windows.log
+  Comando: dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj -c Release -f net9.0-windows10.0.19041.0 -p:WindowsPackageType=None -p:RuntimeIdentifierOverride=win10-x64 -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915\02_MauiWindows --nologo --verbosity normal /m
+  ExitCode: 0
+  Status: Concluido
+- API
+  Projeto: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase\EasyLoginBase.csproj
+  Saida: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915\03_API
+  Log: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915\logs\api.log
+  Comando: dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase\EasyLoginBase.csproj -c Release -f net9.0 -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915\03_API --nologo --verbosity normal /m
+  ExitCode: 0
+  Status: Concluido
+- Servidor Impressao
+  Projeto: C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerServidorImpressoras\EasyManagerServidorImpressoras\EasyManagerServidorImpressoras.csproj
+  Saida: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915\04_ServidorImpressao
+  Log: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915\logs\servidor-impressao.log
+  Comando: dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerServidorImpressoras\EasyManagerServidorImpressoras\EasyManagerServidorImpressoras.csproj -c Release -f net9.0-windows --runtime win-x64 --self-contained true -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915\04_ServidorImpressao --nologo --verbosity normal /m
+  ExitCode: 0
+  Status: Concluido
+- Blazor WebApp
+  Projeto: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\EasyLoginBase.WebAppBlazor.csproj
+  Saida: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915\05_BlazorWebApp
+  Log: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915\logs\blazor-webapp.log
+  Comando: dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase.WebAppBlazor\EasyLoginBase.WebAppBlazor.csproj -c Release -f net9.0 -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915\05_BlazorWebApp --nologo --verbosity normal /m
+  ExitCode: 0
+  Status: Concluido
+- Windows Forms
+  Projeto: C:\Users\PEDRO\Desktop\EasyPRO\EasyModuloPontoVendaDesktop\EasyModuloPontoVendaDesktop\EasyModuloPontoVendaDesktop.csproj
+  Saida: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915\06_WindowsForms
+  Log: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915\logs\windows-forms.log
+  Comando: dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyModuloPontoVendaDesktop\EasyModuloPontoVendaDesktop\EasyModuloPontoVendaDesktop.csproj -c Release -f net9.0-windows --runtime win-x64 --self-contained true -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-06-20_212915\06_WindowsForms --nologo --verbosity normal /m
+  ExitCode: 0
+  Status: Concluido
