@@ -1,0 +1,19 @@
+COMERCIO FACIL - RELEASE
+Gerado em: 2026-08-18 20:57:44
+Pasta: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-08-18_204809
+
+Itens:
+- MAUI Android
+  Projeto: C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj
+  Saida: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-08-18_204809\01_MauiAndroid
+  Log: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-08-18_204809\logs\maui-android.log
+  Comando: dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj -c Release -f net9.0-android -p:AndroidPackageFormat=apk -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-08-18_204809\01_MauiAndroid --nologo --verbosity normal /m
+  ExitCode: 0
+  Status: Concluido
+- API
+  Projeto: C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase\EasyLoginBase.csproj
+  Saida: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-08-18_204809\03_API
+  Log: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-08-18_204809\logs\api.log
+  Comando: dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyLoginBase\EasyLoginBase\EasyLoginBase.csproj -c Release -f net9.0 -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-08-18_204809\03_API --nologo --verbosity normal /m
+  ExitCode: 0
+  Status: Concluido
