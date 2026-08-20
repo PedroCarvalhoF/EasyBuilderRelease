@@ -1,0 +1,12 @@
+COMERCIO FACIL - RELEASE
+Gerado em: 2026-08-20 11:06:00
+Pasta: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-08-20_110001
+
+Itens:
+- MAUI Android
+  Projeto: C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj
+  Saida: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-08-20_110001\01_MauiAndroid
+  Log: C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-08-20_110001\logs\maui-android.log
+  Comando: dotnet publish C:\Users\PEDRO\Desktop\EasyPRO\EasyManagerApp\EasyManagerApp\EasyManagerApp.csproj -c Release -f net9.0-android -p:AndroidPackageFormat=apk -o C:\Users\PEDRO\Desktop\EasyPRO\EasyBuilderRelease\COMERCIO_FACIL_RELEASE_2026-08-20_110001\01_MauiAndroid --nologo --verbosity normal /m
+  ExitCode: 0
+  Status: Concluido
